@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		413713FC219A59040087E546 /* SCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413713FB219A59040087E546 /* SCColors.swift */; };
+		41371409219A68360087E546 /* FlushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41371408219A68360087E546 /* FlushViewController.swift */; };
+		4137140C219A69A40087E546 /* FlushGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137140B219A69A40087E546 /* FlushGridView.swift */; };
+		4137140E219A69AE0087E546 /* FlushItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137140D219A69AE0087E546 /* FlushItemView.swift */; };
+		41371411219AA2BC0087E546 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41371410219AA2BC0087E546 /* Constants.swift */; };
+		41371413219AA53E0087E546 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41371412219AA53E0087E546 /* LogoView.swift */; };
 		41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C22199699300F60348 /* AppDelegate.swift */; };
-		41D6B5C52199699300F60348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C42199699300F60348 /* ViewController.swift */; };
 		41D6B5C82199699300F60348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D6B5C62199699300F60348 /* Main.storyboard */; };
 		41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */; };
 		41D6B5CD2199699500F60348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D6B5CC2199699500F60348 /* Assets.xcassets */; };
@@ -37,9 +41,13 @@
 
 /* Begin PBXFileReference section */
 		413713FB219A59040087E546 /* SCColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCColors.swift; sourceTree = "<group>"; };
+		41371408219A68360087E546 /* FlushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushViewController.swift; sourceTree = "<group>"; };
+		4137140B219A69A40087E546 /* FlushGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushGridView.swift; sourceTree = "<group>"; };
+		4137140D219A69AE0087E546 /* FlushItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushItemView.swift; sourceTree = "<group>"; };
+		41371410219AA2BC0087E546 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		41371412219AA53E0087E546 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		41D6B5BF2199699300F60348 /* SmartCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6B5C22199699300F60348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41D6B5C42199699300F60348 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41D6B5C72199699300F60348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41D6B5CA2199699300F60348 /* SmartCard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartCard.xcdatamodel; sourceTree = "<group>"; };
 		41D6B5CC2199699500F60348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,9 +158,29 @@
 		41371406219A620D0087E546 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				41D6B5C42199699300F60348 /* ViewController.swift */,
+				41371407219A681F0087E546 /* FlushViewController */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		41371407219A681F0087E546 /* FlushViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4137140A219A698F0087E546 /* FlushUI */,
+				41371408219A68360087E546 /* FlushViewController.swift */,
+			);
+			path = FlushViewController;
+			sourceTree = "<group>";
+		};
+		4137140A219A698F0087E546 /* FlushUI */ = {
+			isa = PBXGroup;
+			children = (
+				4137140B219A69A40087E546 /* FlushGridView.swift */,
+				4137140D219A69AE0087E546 /* FlushItemView.swift */,
+				41371410219AA2BC0087E546 /* Constants.swift */,
+				41371412219AA53E0087E546 /* LogoView.swift */,
+			);
+			path = FlushUI;
 			sourceTree = "<group>";
 		};
 		41D6B5B62199699300F60348 = {
@@ -342,10 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4137140E219A69AE0087E546 /* FlushItemView.swift in Sources */,
+				41371413219AA53E0087E546 /* LogoView.swift in Sources */,
 				41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */,
 				413713FC219A59040087E546 /* SCColors.swift in Sources */,
-				41D6B5C52199699300F60348 /* ViewController.swift in Sources */,
+				4137140C219A69A40087E546 /* FlushGridView.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
+				41371409219A68360087E546 /* FlushViewController.swift in Sources */,
+				41371411219AA2BC0087E546 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

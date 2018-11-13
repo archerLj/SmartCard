@@ -22,4 +22,6 @@ struct SCColor {
     static let bankPuFa = UIColor(red: 62/255.0, green: 64/255.0, blue: 149/255.0, alpha: 1.0)
     static let bankPingAn = UIColor(red: 234/255.0, green: 85/255.0, blue: 4/255.0, alpha: 1.0)
     static let bankGuangFa = UIColor(red: 118/255.0, green: 37/255.0, blue: 43/255.0, alpha: 1.0)
+    
+    static let appColor = UIColor(red: 49/255.0, green: 90/255.0, blue: 226/255.0, alpha: 1.0)
 }
