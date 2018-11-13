@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413713FC219A59040087E546 /* SCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413713FB219A59040087E546 /* SCColors.swift */; };
 		41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C22199699300F60348 /* AppDelegate.swift */; };
 		41D6B5C52199699300F60348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C42199699300F60348 /* ViewController.swift */; };
 		41D6B5C82199699300F60348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D6B5C62199699300F60348 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		413713FB219A59040087E546 /* SCColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCColors.swift; sourceTree = "<group>"; };
 		41D6B5BF2199699300F60348 /* SmartCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6B5C22199699300F60348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D6B5C42199699300F60348 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413713FD219A60900087E546 /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				41D6B5D12199699500F60348 /* Info.plist */,
+			);
+			path = SupportingFile;
+			sourceTree = "<group>";
+		};
+		413713FE219A60A20087E546 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41D6B5CC2199699500F60348 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		413713FF219A60B50087E546 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				41D6B5C62199699300F60348 /* Main.storyboard */,
+				41D6B5CE2199699500F60348 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		41371400219A60D10087E546 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				41D6B5C22199699300F60348 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		41371401219A60E90087E546 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				413713FB219A59040087E546 /* SCColors.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		41371402219A61EC0087E546 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41371403219A61F60087E546 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		41371404219A61FE0087E546 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		41371405219A62050087E546 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		41371406219A620D0087E546 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41D6B5C42199699300F60348 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		41D6B5B62199699300F60348 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +178,16 @@
 		41D6B5C12199699300F60348 /* SmartCard */ = {
 			isa = PBXGroup;
 			children = (
-				41D6B5C22199699300F60348 /* AppDelegate.swift */,
-				41D6B5C42199699300F60348 /* ViewController.swift */,
-				41D6B5C62199699300F60348 /* Main.storyboard */,
-				41D6B5CC2199699500F60348 /* Assets.xcassets */,
-				41D6B5CE2199699500F60348 /* LaunchScreen.storyboard */,
-				41D6B5D12199699500F60348 /* Info.plist */,
+				41371406219A620D0087E546 /* ViewController */,
+				41371405219A62050087E546 /* Extension */,
+				41371404219A61FE0087E546 /* Protocol */,
+				41371403219A61F60087E546 /* Manager */,
+				41371402219A61EC0087E546 /* Model */,
+				41371401219A60E90087E546 /* Configuration */,
+				41371400219A60D10087E546 /* Delegate */,
+				413713FF219A60B50087E546 /* StoryBoard */,
+				413713FE219A60A20087E546 /* Resources */,
+				413713FD219A60900087E546 /* SupportingFile */,
 				41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */,
 			);
 			path = SmartCard;
@@ -260,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */,
+				413713FC219A59040087E546 /* SCColors.swift in Sources */,
 				41D6B5C52199699300F60348 /* ViewController.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
 			);
@@ -438,7 +522,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9R69T99AE8;
-				INFOPLIST_FILE = SmartCard/Info.plist;
+				INFOPLIST_FILE = SmartCard/SupportingFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9R69T99AE8;
-				INFOPLIST_FILE = SmartCard/Info.plist;
+				INFOPLIST_FILE = SmartCard/SupportingFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
