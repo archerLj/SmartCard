@@ -1,0 +1,6 @@
+framework module Pods_SmartCardTests {
+  umbrella header "Pods-SmartCardTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

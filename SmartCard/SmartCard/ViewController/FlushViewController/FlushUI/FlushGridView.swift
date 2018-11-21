@@ -32,7 +32,7 @@ class FlushGridView: UIView {
         layer.masksToBounds = true
         
         containerView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width * 1.4, height: frame.size.height * 1.4))
-        containerView.backgroundColor = SCColor.appColor
+        containerView.backgroundColor = UIColor.appColor
         addSubview(containerView)
         
         renderItemViews()
@@ -70,11 +70,7 @@ extension FlushGridView {
                 containerView.addSubview(view)
                 itemRows.append(view)
                 
-                let point = view.convert(center, from: self)
-                if (point.x >= 0 &&
-                    point.y >= 0 &&
-                    point.x <= view.bounds.width &&
-                    point.y <= view.bounds.height) {
+                if view.frame.contains(center) {
                     centerItemView = view
                 }
             }
