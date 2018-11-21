@@ -32,6 +32,7 @@ class SCAddCreditCardViewController: UIViewController {
         super.viewDidLoad()
         self.title = "添加信用卡"
         
+        adapteKeyboard = true
         preSetting()
     }
     
