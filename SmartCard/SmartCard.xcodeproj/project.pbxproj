@@ -28,12 +28,17 @@
 		4140DC5621A3AE3800494F98 /* UIViewController_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC5521A3AE3800494F98 /* UIViewController_Ext.swift */; };
 		4140DC5A21A3D2DD00494F98 /* SCSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC5921A3D2DD00494F98 /* SCSettingTableViewCell.swift */; };
 		4140DC5C21A3D43200494F98 /* String_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC5B21A3D43200494F98 /* String_Ext.swift */; };
-		4140DC5E21A3E22200494F98 /* SCCardManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC5D21A3E22200494F98 /* SCCardManageTableViewCell.swift */; };
 		4140DC6021A3F96300494F98 /* SCAddCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC5F21A3F96300494F98 /* SCAddCreditCardViewController.swift */; };
 		4140DC6421A4EBE500494F98 /* SCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC6321A4EBE500494F98 /* SCTextField.swift */; };
 		4140DC6621A52B5700494F98 /* UIColor_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC6521A52B5700494F98 /* UIColor_Ext.swift */; };
 		4140DC6821A5329000494F98 /* SCSelectBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC6721A5329000494F98 /* SCSelectBankViewController.swift */; };
 		4140DC6A21A5336800494F98 /* SCSelectBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DC6921A5336800494F98 /* SCSelectBankTableViewCell.swift */; };
+		4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCBE21A6504100494F98 /* SCDayTableViewController.swift */; };
+		4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCCC21A6823600494F98 /* UITextField_Ext.swift */; };
+		4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCD021A68AFD00494F98 /* CardInfoManager.swift */; };
+		41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D652DD21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift */; };
+		41D652E021A7D91100F14AF3 /* SCCardManageCellContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D652DF21A7D91100F14AF3 /* SCCardManageCellContent.xib */; };
+		41D652E221A7DB4B00F14AF3 /* SCCardManageCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D652E121A7DB4B00F14AF3 /* SCCardManageCellContentView.swift */; };
 		41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C22199699300F60348 /* AppDelegate.swift */; };
 		41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */; };
 		41D6B5D02199699500F60348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D6B5CE2199699500F60348 /* LaunchScreen.storyboard */; };
@@ -87,12 +92,19 @@
 		4140DC5521A3AE3800494F98 /* UIViewController_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Ext.swift; sourceTree = "<group>"; };
 		4140DC5921A3D2DD00494F98 /* SCSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSettingTableViewCell.swift; sourceTree = "<group>"; };
 		4140DC5B21A3D43200494F98 /* String_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Ext.swift; sourceTree = "<group>"; };
-		4140DC5D21A3E22200494F98 /* SCCardManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCardManageTableViewCell.swift; sourceTree = "<group>"; };
 		4140DC5F21A3F96300494F98 /* SCAddCreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCAddCreditCardViewController.swift; sourceTree = "<group>"; };
 		4140DC6321A4EBE500494F98 /* SCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTextField.swift; sourceTree = "<group>"; };
 		4140DC6521A52B5700494F98 /* UIColor_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Ext.swift; sourceTree = "<group>"; };
 		4140DC6721A5329000494F98 /* SCSelectBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSelectBankViewController.swift; sourceTree = "<group>"; };
 		4140DC6921A5336800494F98 /* SCSelectBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSelectBankTableViewCell.swift; sourceTree = "<group>"; };
+		4140DCBE21A6504100494F98 /* SCDayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDayTableViewController.swift; sourceTree = "<group>"; };
+		4140DCC821A680E600494F98 /* CardInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4140DCC921A680E600494F98 /* CardInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4140DCCC21A6823600494F98 /* UITextField_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Ext.swift; sourceTree = "<group>"; };
+		4140DCD021A68AFD00494F98 /* CardInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoManager.swift; sourceTree = "<group>"; };
+		41D652DD21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRemoveableTableViewCell.swift; sourceTree = "<group>"; };
+		41D652DF21A7D91100F14AF3 /* SCCardManageCellContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCCardManageCellContent.xib; sourceTree = "<group>"; };
+		41D652E121A7DB4B00F14AF3 /* SCCardManageCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCardManageCellContentView.swift; sourceTree = "<group>"; };
 		41D6B5BF2199699300F60348 /* SmartCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6B5C22199699300F60348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41D6B5CA2199699300F60348 /* SmartCard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartCard.xcdatamodel; sourceTree = "<group>"; };
@@ -213,6 +225,8 @@
 				4140DC5B21A3D43200494F98 /* String_Ext.swift */,
 				4140DC6321A4EBE500494F98 /* SCTextField.swift */,
 				4140DC6521A52B5700494F98 /* UIColor_Ext.swift */,
+				4140DCCC21A6823600494F98 /* UITextField_Ext.swift */,
+				41D652DD21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -286,8 +300,9 @@
 			isa = PBXGroup;
 			children = (
 				4140DC5921A3D2DD00494F98 /* SCSettingTableViewCell.swift */,
-				4140DC5D21A3E22200494F98 /* SCCardManageTableViewCell.swift */,
 				4140DC6921A5336800494F98 /* SCSelectBankTableViewCell.swift */,
+				41D652DF21A7D91100F14AF3 /* SCCardManageCellContent.xib */,
+				41D652E121A7DB4B00F14AF3 /* SCCardManageCellContentView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -299,8 +314,21 @@
 				4140DC4F21A39BBE00494F98 /* SCCardManageViewController.swift */,
 				4140DC5F21A3F96300494F98 /* SCAddCreditCardViewController.swift */,
 				4140DC6721A5329000494F98 /* SCSelectBankViewController.swift */,
+				4140DCBE21A6504100494F98 /* SCDayTableViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		4140DCB521A648B500494F98 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				4140DCC921A680E600494F98 /* CardInfo+CoreDataClass.swift */,
+				4140DCC821A680E600494F98 /* CardInfo+CoreDataProperties.swift */,
+				41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */,
+				4140DCD021A68AFD00494F98 /* CardInfoManager.swift */,
+			);
+			name = DataBase;
+			path = ../DataBase;
 			sourceTree = "<group>";
 		};
 		41D6B5B62199699300F60348 = {
@@ -328,6 +356,7 @@
 		41D6B5C12199699300F60348 /* SmartCard */ = {
 			isa = PBXGroup;
 			children = (
+				4140DCB521A648B500494F98 /* DataBase */,
 				41371406219A620D0087E546 /* ViewController */,
 				41371405219A62050087E546 /* Extension */,
 				41371404219A61FE0087E546 /* Protocol */,
@@ -338,7 +367,6 @@
 				413713FF219A60B50087E546 /* StoryBoard */,
 				413713FE219A60A20087E546 /* Resources */,
 				413713FD219A60900087E546 /* SupportingFile */,
-				41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */,
 			);
 			path = SmartCard;
 			sourceTree = "<group>";
@@ -493,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D652E021A7D91100F14AF3 /* SCCardManageCellContent.xib in Resources */,
 				4140DC4621A2B55D00494F98 /* Card.storyboard in Resources */,
 				41D6B5D02199699500F60348 /* LaunchScreen.storyboard in Resources */,
 				4140DC4821A2B56400494F98 /* History.storyboard in Resources */,
@@ -579,12 +608,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmartCard/Pods-SmartCard-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -605,24 +636,28 @@
 				4140DC5A21A3D2DD00494F98 /* SCSettingTableViewCell.swift in Sources */,
 				4140DC5C21A3D43200494F98 /* String_Ext.swift in Sources */,
 				4140DC5421A3A7EE00494F98 /* StoryboardIdentifiable.swift in Sources */,
+				4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */,
 				4140DC6421A4EBE500494F98 /* SCTextField.swift in Sources */,
 				4137140E219A69AE0087E546 /* FlushItemView.swift in Sources */,
 				4140DC4021A2B43000494F98 /* SCHistoryViewController.swift in Sources */,
 				4140DC5021A39BBE00494F98 /* SCCardManageViewController.swift in Sources */,
-				4140DC5E21A3E22200494F98 /* SCCardManageTableViewCell.swift in Sources */,
 				4140DC4C21A2B75100494F98 /* CommonMethods.swift in Sources */,
 				4140DC5221A3A72300494F98 /* UIStoryboard_Ext.swift in Sources */,
 				4140DC6621A52B5700494F98 /* UIColor_Ext.swift in Sources */,
 				4140DC4221A2B43A00494F98 /* SCCreditCardViewController.swift in Sources */,
 				41371413219AA53E0087E546 /* LogoView.swift in Sources */,
+				4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */,
 				4140DC3E21A2B42800494F98 /* SCSettingViewController.swift in Sources */,
 				4140DC6A21A5336800494F98 /* SCSelectBankTableViewCell.swift in Sources */,
 				41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */,
 				4140DC4421A2B45700494F98 /* SCMainTabBarViewController.swift in Sources */,
+				4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */,
 				413713FC219A59040087E546 /* SCBanks.swift in Sources */,
 				4137140C219A69A40087E546 /* FlushGridView.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
 				4140DC5621A3AE3800494F98 /* UIViewController_Ext.swift in Sources */,
+				41D652E221A7DB4B00F14AF3 /* SCCardManageCellContentView.swift in Sources */,
+				41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */,
 				4140DC6021A3F96300494F98 /* SCAddCreditCardViewController.swift in Sources */,
 				41371409219A68360087E546 /* FlushViewController.swift in Sources */,
 				41371411219AA2BC0087E546 /* Constants.swift in Sources */,

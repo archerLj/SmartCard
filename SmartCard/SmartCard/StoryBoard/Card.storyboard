@@ -16,13 +16,35 @@
                     <view key="view" contentMode="scaleToFill" id="mOA-GJ-7cY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aWX-0s-CGE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SCRemoveableTableViewCell" rowHeight="98" id="72r-K6-tQC" customClass="SCRemoveableTableViewCell" customModule="SmartCard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="72r-K6-tQC" id="Lbx-rp-nGH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aWX-0s-CGE" firstAttribute="top" secondItem="jo3-mb-Z6B" secondAttribute="top" id="3n1-jL-tfN"/>
+                            <constraint firstItem="aWX-0s-CGE" firstAttribute="leading" secondItem="jo3-mb-Z6B" secondAttribute="leading" id="HFq-BU-6Ef"/>
+                            <constraint firstItem="jo3-mb-Z6B" firstAttribute="bottom" secondItem="aWX-0s-CGE" secondAttribute="bottom" id="d58-VT-RjP"/>
+                            <constraint firstItem="jo3-mb-Z6B" firstAttribute="trailing" secondItem="aWX-0s-CGE" secondAttribute="trailing" id="tRK-aS-Thb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jo3-mb-Z6B"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39p-CN-Jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="148"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="147.97601199400302"/>
         </scene>
     </scenes>
 </document>

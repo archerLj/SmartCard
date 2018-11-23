@@ -50,6 +50,17 @@ extension UIViewController: UITextFieldDelegate {
         return true
     }
     
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text {
+            if textField.maxLength > 0 {
+                if text.count >= textField.maxLength {
+                    textField.text = String(text.prefix(textField.maxLength - 1))
+                }
+            }
+        }
+        return true
+    }
+    
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         firstResponder = textField
         return true

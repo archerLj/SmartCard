@@ -6,6 +6,7 @@ target 'SmartCard' do
   use_frameworks!
   pod 'RxSwift',    '~> 4.4.0'
   pod 'RxCocoa',    '~> 4.4.0'
+  pod 'PKHUD'
 
   # Pods for SmartCard
 

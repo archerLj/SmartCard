@@ -21,6 +21,11 @@ class SCSelectBankViewController: UITableViewController {
         self.title = "选择银行"
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        selectSubject.onCompleted()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SCBank.Names.count
     }
