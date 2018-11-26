@@ -27,6 +27,7 @@ class SCRemoveableTableViewCell: UITableViewCell {
     }
 
     static var sNotificaionName = "SCRemoveableTableViewCellHideDelete"
+    static var sRemoveShowing = false
     
     @IBInspectable
     var cellContentViewXib: String!
@@ -63,6 +64,7 @@ class SCRemoveableTableViewCell: UITableViewCell {
         }
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
             self.scrollView.contentOffset = CGPoint.zero
+            SCRemoveableTableViewCell.sRemoveShowing = false
         }, completion: nil)
     }
     
@@ -121,6 +123,7 @@ extension SCRemoveableTableViewCell: UIScrollViewDelegate {
         let offsetX = scrollView.contentOffset.x > removeViewWidth / 2.0 ? removeViewWidth : 0
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
             scrollView.contentOffset = CGPoint(x: offsetX, y: 0)
+            SCRemoveableTableViewCell.sRemoveShowing = (offsetX == 0) ? false : true
         }, completion: nil)
     }
 }

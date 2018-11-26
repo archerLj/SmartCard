@@ -170,6 +170,138 @@
             </objects>
             <point key="canvasLocation" x="768.79999999999995" y="160.56971514242881"/>
         </scene>
+        <!--Pay And Rate View Controller-->
+        <scene sceneID="pbQ-ZW-Dcg">
+            <objects>
+                <viewController storyboardIdentifier="SCPayAndRateViewController" hidesBottomBarWhenPushed="YES" id="UUc-Vt-dOi" customClass="SCPayAndRateViewController" customModule="SmartCard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1J5-2k-SaB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O1q-sZ-tLC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="G5l-bQ-ae6" customClass="SCRemoveableTableViewCell" customModule="SmartCard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5l-bQ-ae6" id="OPb-Tz-nWJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cellContentViewXib" value="SCPayARateCellContent"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UUc-Vt-dOi" id="1fu-8c-Le1"/>
+                                    <outlet property="delegate" destination="UUc-Vt-dOi" id="1zw-9E-jGF"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6F-Sa-h4G">
+                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刷卡方式:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB8-M5-s74">
+                                        <rect key="frame" x="50" y="30" width="74" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPy-vF-oJq" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="25.5" width="191" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Wgo-TX-rHo"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="UUc-Vt-dOi" id="D0P-jC-f41"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="费率:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efk-S8-SAw">
+                                        <rect key="frame" x="50" y="71" width="74" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-1M-Qzp" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="66.5" width="191" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NVJ-YH-fMB"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="UUc-Vt-dOi" id="s3F-4j-SDT"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVR-7i-t7x">
+                                        <rect key="frame" x="0.0" y="106" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Y1a-mc-7fW"/>
+                                        </constraints>
+                                        <state key="normal" title="保存">
+                                            <color key="titleColor" red="0.75686274509999996" green="0.73333333329999995" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="save:" destination="UUc-Vt-dOi" eventType="touchUpInside" id="hw9-J1-SxF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UY-zG-sNi">
+                                        <rect key="frame" x="330" y="71" width="14" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="L0P-1M-Qzp" firstAttribute="centerY" secondItem="Efk-S8-SAw" secondAttribute="centerY" id="7rH-2N-AeU"/>
+                                    <constraint firstItem="aB8-M5-s74" firstAttribute="leading" secondItem="L6F-Sa-h4G" secondAttribute="leading" constant="50" id="KBK-Kn-aPF"/>
+                                    <constraint firstAttribute="trailing" secondItem="BVR-7i-t7x" secondAttribute="trailing" id="Mr7-S7-oPl"/>
+                                    <constraint firstItem="1UY-zG-sNi" firstAttribute="centerY" secondItem="L0P-1M-Qzp" secondAttribute="centerY" id="O7b-xl-LcN"/>
+                                    <constraint firstAttribute="trailing" secondItem="L0P-1M-Qzp" secondAttribute="trailing" constant="50" id="Tkp-0Q-dbK"/>
+                                    <constraint firstItem="Efk-S8-SAw" firstAttribute="top" secondItem="aB8-M5-s74" secondAttribute="bottom" constant="20" id="UIE-gY-3y2"/>
+                                    <constraint firstAttribute="bottom" secondItem="BVR-7i-t7x" secondAttribute="bottom" id="WXf-gz-u86"/>
+                                    <constraint firstItem="WPy-vF-oJq" firstAttribute="leading" secondItem="aB8-M5-s74" secondAttribute="trailing" constant="10" id="ap7-sg-kzJ"/>
+                                    <constraint firstItem="L0P-1M-Qzp" firstAttribute="leading" secondItem="Efk-S8-SAw" secondAttribute="trailing" constant="10" id="dDI-DI-DQQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="hbU-YW-4mM"/>
+                                    <constraint firstItem="1UY-zG-sNi" firstAttribute="leading" secondItem="L0P-1M-Qzp" secondAttribute="trailing" constant="5" id="k5Z-p4-tnr"/>
+                                    <constraint firstItem="Efk-S8-SAw" firstAttribute="width" secondItem="aB8-M5-s74" secondAttribute="width" id="kdL-83-qRd"/>
+                                    <constraint firstItem="Efk-S8-SAw" firstAttribute="leading" secondItem="L6F-Sa-h4G" secondAttribute="leading" constant="50" id="kzW-dH-kdF"/>
+                                    <constraint firstItem="aB8-M5-s74" firstAttribute="top" secondItem="L6F-Sa-h4G" secondAttribute="top" constant="30" id="mp3-TU-2vK"/>
+                                    <constraint firstItem="BVR-7i-t7x" firstAttribute="leading" secondItem="L6F-Sa-h4G" secondAttribute="leading" id="sWg-ks-EP8"/>
+                                    <constraint firstItem="WPy-vF-oJq" firstAttribute="centerY" secondItem="aB8-M5-s74" secondAttribute="centerY" id="txO-kq-81R"/>
+                                    <constraint firstAttribute="trailing" secondItem="WPy-vF-oJq" secondAttribute="trailing" constant="50" id="u8R-bp-RrU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L6F-Sa-h4G" firstAttribute="leading" secondItem="6rt-uD-ids" secondAttribute="leading" id="UY4-oh-apU"/>
+                            <constraint firstItem="O1q-sZ-tLC" firstAttribute="top" secondItem="6rt-uD-ids" secondAttribute="top" id="ViX-nJ-mGX"/>
+                            <constraint firstItem="O1q-sZ-tLC" firstAttribute="leading" secondItem="6rt-uD-ids" secondAttribute="leading" id="mXZ-cs-L8e"/>
+                            <constraint firstItem="6rt-uD-ids" firstAttribute="bottom" secondItem="L6F-Sa-h4G" secondAttribute="bottom" id="tU1-Lw-ytv"/>
+                            <constraint firstItem="6rt-uD-ids" firstAttribute="trailing" secondItem="O1q-sZ-tLC" secondAttribute="trailing" id="xCF-h5-T2V"/>
+                            <constraint firstItem="L6F-Sa-h4G" firstAttribute="trailing" secondItem="6rt-uD-ids" secondAttribute="trailing" id="xSe-uC-bog"/>
+                            <constraint firstItem="6rt-uD-ids" firstAttribute="bottom" secondItem="O1q-sZ-tLC" secondAttribute="bottom" id="y0X-Id-PHb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6rt-uD-ids"/>
+                    </view>
+                    <connections>
+                        <outlet property="addViewBottomConstraint" destination="tU1-Lw-ytv" id="rxM-VY-cw6"/>
+                        <outlet property="payWay" destination="WPy-vF-oJq" id="NNx-o8-bIF"/>
+                        <outlet property="rate" destination="L0P-1M-Qzp" id="I6b-Ga-lbp"/>
+                        <outlet property="tableView" destination="O1q-sZ-tLC" id="tH8-3S-bmv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ot0-y1-N3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="874.81259370314854"/>
+        </scene>
         <!--Add Credit Card View Controller-->
         <scene sceneID="DHK-pM-YnN">
             <objects>

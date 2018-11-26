@@ -90,6 +90,9 @@ extension SCSettingViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             let cardManageVC: SCCardManageViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
             self.navigationController?.pushViewController(cardManageVC, animated: true)
+        case 2:
+            let payAndRateVC: SCPayAndRateViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
+            self.navigationController?.pushViewController(payAndRateVC, animated: true)
         default:
             break
         }

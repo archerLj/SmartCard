@@ -8,7 +8,12 @@
         <attribute name="gracePeriod" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="quickPayLines" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="PayWayARate" representedClassName="PayWayARate" syncable="YES" codeGenerationType="class">
+        <attribute name="payWay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
         <element name="CardInfo" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="PayWayARate" positionX="-36" positionY="54" width="128" height="75"/>
     </elements>
 </model>

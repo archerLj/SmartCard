@@ -85,6 +85,11 @@ extension SCCardManageViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if SCRemoveableTableViewCell.sRemoveShowing {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: SCRemoveableTableViewCell.sNotificaionName), object: nil, userInfo: nil)
+            return
+        }
+        
         let cardInfo = cardInfos![indexPath.row]
         let addCreditCardVC: SCAddCreditCardViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
         addCreditCardVC.cardNumberToEdit = cardInfo.cardNumber
