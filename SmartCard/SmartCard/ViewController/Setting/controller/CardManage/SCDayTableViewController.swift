@@ -17,8 +17,9 @@ class SCDayTableViewController: UIViewController {
         return selectDaySubject.asObservable()
     }
     
+    var titleInfo: String?
     var tableView: UITableView!
-    var titleInfo: UILabel!
+    var titleInfoLabel: UILabel!
     var cancelBtn: UIButton!
     var maxDay = 28
 
@@ -27,11 +28,16 @@ class SCDayTableViewController: UIViewController {
         
         view.backgroundColor = UIColor.white
 
-        titleInfo = UILabel(frame: CGRect.zero)
-        titleInfo.text = "请选择日期"
-        titleInfo.textColor = UIColor.lightGray
-        titleInfo.font = UIFont.systemFont(ofSize: 12.0)
-        titleInfo.textAlignment = .center
+        titleInfoLabel = UILabel(frame: CGRect.zero)
+        
+        if let title = titleInfo {
+            titleInfoLabel.text = title
+        } else {
+            titleInfoLabel.text = "请选择日期"
+        }
+        titleInfoLabel.textColor = UIColor.lightGray
+        titleInfoLabel.font = UIFont.systemFont(ofSize: 12.0)
+        titleInfoLabel.textAlignment = .center
         
         cancelBtn = UIButton(frame: CGRect.zero)
         cancelBtn.setTitle("取消", for: .normal)
@@ -43,7 +49,7 @@ class SCDayTableViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.view.addSubview(titleInfo)
+        self.view.addSubview(titleInfoLabel)
         self.view.addSubview(tableView)
         self.view.addSubview(cancelBtn)
     }
@@ -54,7 +60,7 @@ class SCDayTableViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        titleInfo.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50.0)
+        titleInfoLabel.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50.0)
         cancelBtn.frame = CGRect(x: 0, y: view.bounds.height - 80.0, width: view.bounds.width, height: 80.0)
         tableView.frame = CGRect(x: 0, y: 50.0, width: view.bounds.width, height: view.bounds.height - 130.0)
     }

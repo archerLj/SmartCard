@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:SmartCard/../DataBase"
-      name = "DataBase">
-      <FileRef
-         location = "group:DataBase/CardInfo+CoreDataClass.swift">
-      </FileRef>
-      <FileRef
-         location = "group:DataBase/CardInfo+CoreDataProperties.swift">
-      </FileRef>
-      <Group
-         location = "group:DataBase/SmartCard.xcdatamodeld"
-         name = "SmartCard.xcdatamodeld">
-         <FileRef
-            location = "group:DataBase/SmartCard.xcdatamodeld/SmartCard.xcdatamodel">
-         </FileRef>
-      </Group>
-      <FileRef
-         location = "group:DataBase/CardInfoManager.swift">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:SmartCard.xcodeproj">
    </FileRef>

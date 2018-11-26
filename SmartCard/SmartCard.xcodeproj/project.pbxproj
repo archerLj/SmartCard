@@ -40,6 +40,14 @@
 		41C2B96021AB8EE1009E9F25 /* PayWayARateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */; };
 		41C2B96321AB92BF009E9F25 /* SCPayARateCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */; };
 		41C2B96521AB92CA009E9F25 /* SCPayARateCellContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C2B96421AB92CA009E9F25 /* SCPayARateCellContent.xib */; };
+		41C2B96821ABC21C009E9F25 /* SCPayPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96721ABC21C009E9F25 /* SCPayPlanTableViewController.swift */; };
+		41C2B96A21ABC3BB009E9F25 /* SCSellerManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96921ABC3BB009E9F25 /* SCSellerManageViewController.swift */; };
+		41C2B96D21ABC708009E9F25 /* SCSellerCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96C21ABC708009E9F25 /* SCSellerCellContent.swift */; };
+		41C2B96F21ABC714009E9F25 /* SCSellerCellContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C2B96E21ABC714009E9F25 /* SCSellerCellContent.xib */; };
+		41C2B97A21ABCB5E009E9F25 /* SellerConfigureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B97921ABCB5E009E9F25 /* SellerConfigureManager.swift */; };
+		41C2B97C21ABD654009E9F25 /* SCNewPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B97B21ABD654009E9F25 /* SCNewPlanViewController.swift */; };
+		41C2B97E21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B97D21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift */; };
+		41C2B98521ABECE0009E9F25 /* PayPlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B98421ABECE0009E9F25 /* PayPlanManager.swift */; };
 		41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D652DD21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift */; };
 		41D652E021A7D91100F14AF3 /* SCCardManageCellContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D652DF21A7D91100F14AF3 /* SCCardManageCellContent.xib */; };
 		41D652E221A7DB4B00F14AF3 /* SCCardManageCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D652E121A7DB4B00F14AF3 /* SCCardManageCellContentView.swift */; };
@@ -107,11 +115,23 @@
 		4140DCCC21A6823600494F98 /* UITextField_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Ext.swift; sourceTree = "<group>"; };
 		4140DCD021A68AFD00494F98 /* CardInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoManager.swift; sourceTree = "<group>"; };
 		41C2B95721AB83D9009E9F25 /* SCPayAndRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayAndRateViewController.swift; sourceTree = "<group>"; };
-		41C2B95921AB8E4A009E9F25 /* PayWayARate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayWayARate+CoreDataProperties.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayWayARate+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		41C2B95A21AB8E4A009E9F25 /* PayWayARate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayWayARate+CoreDataClass.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayWayARate+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWayARateManager.swift; sourceTree = "<group>"; };
 		41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayARateCellContent.swift; sourceTree = "<group>"; };
 		41C2B96421AB92CA009E9F25 /* SCPayARateCellContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCPayARateCellContent.xib; sourceTree = "<group>"; };
+		41C2B96721ABC21C009E9F25 /* SCPayPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayPlanTableViewController.swift; sourceTree = "<group>"; };
+		41C2B96921ABC3BB009E9F25 /* SCSellerManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSellerManageViewController.swift; sourceTree = "<group>"; };
+		41C2B96C21ABC708009E9F25 /* SCSellerCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSellerCellContent.swift; sourceTree = "<group>"; };
+		41C2B96E21ABC714009E9F25 /* SCSellerCellContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCSellerCellContent.xib; sourceTree = "<group>"; };
+		41C2B97121ABCB23009E9F25 /* SellerConfigure+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SellerConfigure+CoreDataClass.swift"; sourceTree = "<group>"; };
+		41C2B97221ABCB23009E9F25 /* SellerConfigure+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SellerConfigure+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		41C2B97521ABCB50009E9F25 /* PayWayARate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayWayARate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		41C2B97621ABCB50009E9F25 /* PayWayARate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayWayARate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		41C2B97921ABCB5E009E9F25 /* SellerConfigureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerConfigureManager.swift; sourceTree = "<group>"; };
+		41C2B97B21ABD654009E9F25 /* SCNewPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNewPlanViewController.swift; sourceTree = "<group>"; };
+		41C2B97D21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNewPlanTableViewCell.swift; sourceTree = "<group>"; };
+		41C2B98021ABEC8C009E9F25 /* PayPlan+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayPlan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		41C2B98121ABEC8C009E9F25 /* PayPlan+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayPlan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		41C2B98421ABECE0009E9F25 /* PayPlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPlanManager.swift; sourceTree = "<group>"; };
 		41D652DD21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRemoveableTableViewCell.swift; sourceTree = "<group>"; };
 		41D652DF21A7D91100F14AF3 /* SCCardManageCellContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCCardManageCellContent.xib; sourceTree = "<group>"; };
 		41D652E121A7DB4B00F14AF3 /* SCCardManageCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCardManageCellContentView.swift; sourceTree = "<group>"; };
@@ -309,6 +329,7 @@
 		4140DC5721A3D2BC00494F98 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				41C2B96B21ABC6E7009E9F25 /* PayPlan */,
 				41C2B96121AB92A2009E9F25 /* PayAndRate */,
 				41C2B95421AB8396009E9F25 /* CardManage */,
 				4140DC5921A3D2DD00494F98 /* SCSettingTableViewCell.swift */,
@@ -319,6 +340,7 @@
 		4140DC5821A3D2C200494F98 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				41C2B96621ABC204009E9F25 /* PayPlan */,
 				41C2B95521AB83B6009E9F25 /* PayAndRate */,
 				41C2B95321AB837C009E9F25 /* CardManage */,
 				4140DC3D21A2B42800494F98 /* SCSettingViewController.swift */,
@@ -329,6 +351,8 @@
 		4140DCB521A648B500494F98 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				41C2B97F21ABEC6A009E9F25 /* PayPlan */,
+				41C2B97021ABCB02009E9F25 /* SellerConfigure */,
 				41C2B95E21AB8EC8009E9F25 /* PayWayARate */,
 				41C2B95D21AB8EBC009E9F25 /* CardInfo */,
 				41D6B5C92199699300F60348 /* SmartCard.xcdatamodeld */,
@@ -379,8 +403,8 @@
 		41C2B95E21AB8EC8009E9F25 /* PayWayARate */ = {
 			isa = PBXGroup;
 			children = (
-				41C2B95A21AB8E4A009E9F25 /* PayWayARate+CoreDataClass.swift */,
-				41C2B95921AB8E4A009E9F25 /* PayWayARate+CoreDataProperties.swift */,
+				41C2B97521ABCB50009E9F25 /* PayWayARate+CoreDataClass.swift */,
+				41C2B97621ABCB50009E9F25 /* PayWayARate+CoreDataProperties.swift */,
 				41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */,
 			);
 			path = PayWayARate;
@@ -393,6 +417,46 @@
 				41C2B96421AB92CA009E9F25 /* SCPayARateCellContent.xib */,
 			);
 			path = PayAndRate;
+			sourceTree = "<group>";
+		};
+		41C2B96621ABC204009E9F25 /* PayPlan */ = {
+			isa = PBXGroup;
+			children = (
+				41C2B96721ABC21C009E9F25 /* SCPayPlanTableViewController.swift */,
+				41C2B96921ABC3BB009E9F25 /* SCSellerManageViewController.swift */,
+				41C2B97B21ABD654009E9F25 /* SCNewPlanViewController.swift */,
+			);
+			path = PayPlan;
+			sourceTree = "<group>";
+		};
+		41C2B96B21ABC6E7009E9F25 /* PayPlan */ = {
+			isa = PBXGroup;
+			children = (
+				41C2B96C21ABC708009E9F25 /* SCSellerCellContent.swift */,
+				41C2B96E21ABC714009E9F25 /* SCSellerCellContent.xib */,
+				41C2B97D21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift */,
+			);
+			path = PayPlan;
+			sourceTree = "<group>";
+		};
+		41C2B97021ABCB02009E9F25 /* SellerConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				41C2B97121ABCB23009E9F25 /* SellerConfigure+CoreDataClass.swift */,
+				41C2B97221ABCB23009E9F25 /* SellerConfigure+CoreDataProperties.swift */,
+				41C2B97921ABCB5E009E9F25 /* SellerConfigureManager.swift */,
+			);
+			path = SellerConfigure;
+			sourceTree = "<group>";
+		};
+		41C2B97F21ABEC6A009E9F25 /* PayPlan */ = {
+			isa = PBXGroup;
+			children = (
+				41C2B98021ABEC8C009E9F25 /* PayPlan+CoreDataClass.swift */,
+				41C2B98121ABEC8C009E9F25 /* PayPlan+CoreDataProperties.swift */,
+				41C2B98421ABECE0009E9F25 /* PayPlanManager.swift */,
+			);
+			path = PayPlan;
 			sourceTree = "<group>";
 		};
 		41D6B5B62199699300F60348 = {
@@ -585,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C2B96F21ABC714009E9F25 /* SCSellerCellContent.xib in Resources */,
 				41D652E021A7D91100F14AF3 /* SCCardManageCellContent.xib in Resources */,
 				4140DC4621A2B55D00494F98 /* Card.storyboard in Resources */,
 				41C2B96521AB92CA009E9F25 /* SCPayARateCellContent.xib in Resources */,
@@ -702,15 +767,21 @@
 				4140DC5C21A3D43200494F98 /* String_Ext.swift in Sources */,
 				4140DC5421A3A7EE00494F98 /* StoryboardIdentifiable.swift in Sources */,
 				41C2B95821AB83D9009E9F25 /* SCPayAndRateViewController.swift in Sources */,
+				41C2B97E21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift in Sources */,
 				4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */,
 				4140DC6421A4EBE500494F98 /* SCTextField.swift in Sources */,
+				41C2B98521ABECE0009E9F25 /* PayPlanManager.swift in Sources */,
 				4137140E219A69AE0087E546 /* FlushItemView.swift in Sources */,
 				4140DC4021A2B43000494F98 /* SCHistoryViewController.swift in Sources */,
 				4140DC5021A39BBE00494F98 /* SCCardManageViewController.swift in Sources */,
+				41C2B96A21ABC3BB009E9F25 /* SCSellerManageViewController.swift in Sources */,
+				41C2B96821ABC21C009E9F25 /* SCPayPlanTableViewController.swift in Sources */,
 				4140DC4C21A2B75100494F98 /* CommonMethods.swift in Sources */,
 				4140DC5221A3A72300494F98 /* UIStoryboard_Ext.swift in Sources */,
 				4140DC6621A52B5700494F98 /* UIColor_Ext.swift in Sources */,
+				41C2B97C21ABD654009E9F25 /* SCNewPlanViewController.swift in Sources */,
 				4140DC4221A2B43A00494F98 /* SCCreditCardViewController.swift in Sources */,
+				41C2B97A21ABCB5E009E9F25 /* SellerConfigureManager.swift in Sources */,
 				41371413219AA53E0087E546 /* LogoView.swift in Sources */,
 				4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */,
 				4140DC3E21A2B42800494F98 /* SCSettingViewController.swift in Sources */,
@@ -722,6 +793,7 @@
 				4137140C219A69A40087E546 /* FlushGridView.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
 				4140DC5621A3AE3800494F98 /* UIViewController_Ext.swift in Sources */,
+				41C2B96D21ABC708009E9F25 /* SCSellerCellContent.swift in Sources */,
 				41D652E221A7DB4B00F14AF3 /* SCCardManageCellContentView.swift in Sources */,
 				41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */,
 				4140DC6021A3F96300494F98 /* SCAddCreditCardViewController.swift in Sources */,

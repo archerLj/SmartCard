@@ -28,6 +28,10 @@ class SCPayAndRateViewController: UIViewController {
         getAllPayARate()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func getAllPayARate() {
         payAndRates.removeAll()
         if let rs = PayWayARateManager.getAll() {
