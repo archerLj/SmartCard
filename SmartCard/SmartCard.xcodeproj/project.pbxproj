@@ -36,6 +36,7 @@
 		4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCBE21A6504100494F98 /* SCDayTableViewController.swift */; };
 		4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCCC21A6823600494F98 /* UITextField_Ext.swift */; };
 		4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCD021A68AFD00494F98 /* CardInfoManager.swift */; };
+		41A978DA21ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978D921ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift */; };
 		41C2B95821AB83D9009E9F25 /* SCPayAndRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B95721AB83D9009E9F25 /* SCPayAndRateViewController.swift */; };
 		41C2B96021AB8EE1009E9F25 /* PayWayARateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */; };
 		41C2B96321AB92BF009E9F25 /* SCPayARateCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */; };
@@ -114,6 +115,7 @@
 		4140DCC921A680E600494F98 /* CardInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4140DCCC21A6823600494F98 /* UITextField_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Ext.swift; sourceTree = "<group>"; };
 		4140DCD021A68AFD00494F98 /* CardInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoManager.swift; sourceTree = "<group>"; };
+		41A978D921ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayPlanTableViewCell.swift; sourceTree = "<group>"; };
 		41C2B95721AB83D9009E9F25 /* SCPayAndRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayAndRateViewController.swift; sourceTree = "<group>"; };
 		41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWayARateManager.swift; sourceTree = "<group>"; };
 		41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayARateCellContent.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				41C2B96C21ABC708009E9F25 /* SCSellerCellContent.swift */,
 				41C2B96E21ABC714009E9F25 /* SCSellerCellContent.xib */,
 				41C2B97D21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift */,
+				41A978D921ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift */,
 			);
 			path = PayPlan;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */,
 				413713FC219A59040087E546 /* SCBanks.swift in Sources */,
 				4137140C219A69A40087E546 /* FlushGridView.swift in Sources */,
+				41A978DA21ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
 				4140DC5621A3AE3800494F98 /* UIViewController_Ext.swift in Sources */,
 				41C2B96D21ABC708009E9F25 /* SCSellerCellContent.swift in Sources */,

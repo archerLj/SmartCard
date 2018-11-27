@@ -19,6 +19,7 @@ class SCNewPlanViewController: UIViewController {
     @IBOutlet weak var startHour: UIButton!
     @IBOutlet weak var endHour: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    var payPlan: PayPlan?
     var maskView: UIView!
     var sellerConfigures:[SellerConfigure] = []
 
@@ -33,6 +34,27 @@ class SCNewPlanViewController: UIViewController {
         endHour.layer.borderColor = UIColor.gray.cgColor
 
         getAllSellerConfiger()
+        if let plan = payPlan {
+            initSetting(plan: plan)
+        }
+    }
+    
+    func initSetting(plan: PayPlan) {
+        
+        self.startHour.setTitle(String(plan.startHour), for: .normal)
+        self.endHour.setTitle(String(plan.endHour), for: .normal)
+        self.startHour.isEnabled = false
+        self.endHour.isEnabled = false
+        
+        let sellerNames = plan.sellerNames!.components(separatedBy: "///")
+        for configure in sellerConfigures {
+            for sellerName in sellerNames {
+                if configure.sellerName == sellerName {
+                    configure.sellerName = "C" + sellerName
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
     
     func getAllSellerConfiger() {
@@ -75,14 +97,23 @@ class SCNewPlanViewController: UIViewController {
         
         sellerNames = String(sellerNames.dropLast(3))
         
-        // TODO save
-        guard let rs = PayPlanManager.save(startHour: Int16(start)!, endHour: Int16(end)!, sellerNames: sellerNames) else {
-            showErrorHud(title: "保存失败")
-            return
+        var result: PayPlan
+        if let plan = payPlan {
+            guard let rs = PayPlanManager.update(startHour: plan.startHour, endHour: plan.endHour, sellerNames: sellerNames) else {
+                showErrorHud(title: "保存失败")
+                return
+            }
+            result = rs
+        } else {
+            guard let rs = PayPlanManager.save(startHour: Int16(start)!, endHour: Int16(end)!, sellerNames: sellerNames) else {
+                showErrorHud(title: "保存失败")
+                return
+            }
+            result = rs
         }
         
         showSuccessHud(title: "保存成功")
-        addSubject.onNext(rs)
+        addSubject.onNext(result)
         addSubject.onCompleted()
         delay(3.0) {
             self.navigationController?.popViewController(animated: true)

@@ -35,10 +35,31 @@ class PayPlanManager {
         guard let manageContext = getManagedContext() else { return nil }
         
         let fetch: NSFetchRequest<PayPlan> = PayPlan.fetchRequest()
+        fetch.sortDescriptors = [NSSortDescriptor(key: "startHour", ascending: true),
+                                 NSSortDescriptor(key: "endHour", ascending: true)]
         
         do {
             let rs = try manageContext.fetch(fetch)
             return rs
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
+    class func update(startHour: Int16, endHour: Int16, sellerNames: String) -> PayPlan? {
+        guard let plan = get(startHour: startHour, endHour: endHour) else {
+            return nil
+        }
+        
+        guard let manageContext = getManagedContext() else {
+            return nil
+        }
+        
+        plan.sellerNames = sellerNames
+        do {
+            try manageContext.save()
+            return plan
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")
             return nil
