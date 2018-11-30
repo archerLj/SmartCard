@@ -11,6 +11,7 @@ import UIKit
 class SCSettingViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
+    var postrait: UIButton!
     let cellImages = [
         UIImage(named: "card_manage"),
         UIImage(named: "swing_card_plan"),
@@ -41,7 +42,8 @@ class SCSettingViewController: UIViewController {
     
     func tableViewHeaderSetting() {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 250.0))
-        let postrait = UIImageView(frame: CGRect(x: 0, y: 0, width: 80.0, height: 80.0))
+        postrait = UIButton(frame: CGRect(x: 0, y: 0, width: 80.0, height: 80.0))
+        postrait.addTarget(self, action: #selector(showProfile(sender:)), for: .touchUpInside)
         let nickName = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 30.0))
         nickName.textAlignment = .center
         nickName.textColor = UIColor(red: 112/255.0, green: 112/255.0, blue: 112/255.0, alpha: 1.0)
@@ -57,13 +59,18 @@ class SCSettingViewController: UIViewController {
         nickName.frame.origin.y = postrait.frame.maxY + 10.0
         lineView.center = CGPoint(x: headerView.center.x, y: nickName.frame.maxY + 10.0)
         
-        postrait.image = UIImage(named: "take_photo")
+        postrait.setImage(UIImage(named: "take_photo"), for: .normal)
         postrait.layer.cornerRadius = postrait.bounds.height / 2.0
         postrait.clipsToBounds = true
         
         nickName.text = "ArcherLj"
         
         self.mainTableView.tableHeaderView = headerView
+    }
+    
+    @objc func showProfile(sender: UIButton) {
+        let profileVC: SCProfileViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
 }
 

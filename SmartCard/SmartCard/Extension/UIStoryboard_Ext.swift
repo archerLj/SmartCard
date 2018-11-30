@@ -11,6 +11,7 @@ import UIKit
 
 extension UIStoryboard {
     enum Storyboard: String {
+        case Login
         case Card
         case History
         case Setting

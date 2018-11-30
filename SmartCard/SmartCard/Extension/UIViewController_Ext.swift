@@ -78,7 +78,7 @@ extension UIViewController: UITextFieldDelegate {
             return
         }
         
-        let frameInView = firstResponder.convert(firstResponder.frame, to: view)
+        let frameInView = firstResponder.convert(firstResponder.bounds, to: view)
         let firstResponderMaxY = frameInView.maxY
         let keyBoardMinY = keyBoardRect.minY
         if firstResponderMaxY > keyBoardMinY {

@@ -42,14 +42,6 @@ class SCMainTabBarViewController: UITabBarController {
         
         
         self.viewControllers = [navCard, navHistory, navSetting]
-        apperanceSetting()
-    }
-    
-    func apperanceSetting() {
-        UINavigationBar.appearance().barTintColor = UIColor(red: 243/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 112/255.0, green: 112/255.0, blue: 112/255.0, alpha: 1.0)]
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "nav_back")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "nav_back")
     }
 }
 

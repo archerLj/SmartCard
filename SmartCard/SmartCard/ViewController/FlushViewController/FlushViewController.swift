@@ -38,10 +38,17 @@ class FlushViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
+        let gesture = GestureManager.get()
         delay(4.0) {
-            let mainTabVC = SCMainTabBarViewController()
-            UIApplication.shared.keyWindow?.rootViewController = mainTabVC
+            if let _ = gesture {
+                let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+                UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
+            } else {
+                let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+                let navVC = UINavigationController(rootViewController: passwordLoginVC)
+                UIApplication.shared.keyWindow?.rootViewController = navVC
+            }
         }
     }
 }

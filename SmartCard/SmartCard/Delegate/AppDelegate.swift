@@ -18,10 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        apperanceSetting()
         window?.backgroundColor = UIColor.white
         window?.rootViewController = FlushViewController()
         window?.makeKeyAndVisible()
         return true
+    }
+    
+    func apperanceSetting() {
+        UINavigationBar.appearance().barTintColor = UIColor(red: 193/255.0, green: 187/255.0, blue: 20/255.0, alpha: 1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "nav_back")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "nav_back")
+        
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
