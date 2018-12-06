@@ -38,10 +38,6 @@ extension CardInfo {
     /// 信用额度
     @NSManaged public var creditLines: Int32
     
-    /// 云闪付限额
-    @NSManaged public var quickPayLines: Int16
-    
-    /// 免息期
-    @NSManaged public var gracePeriod: Int16
-
+    /// 还款提醒
+    @NSManaged public var repaymentWarningDay: Int16
 }

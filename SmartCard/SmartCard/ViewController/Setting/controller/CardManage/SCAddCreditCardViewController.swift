@@ -22,10 +22,8 @@ class SCAddCreditCardViewController: UIViewController {
     @IBOutlet weak var bankName: UILabel!
     @IBOutlet weak var creditLines: SCTextField!
     @IBOutlet weak var creditBillDate: UIButton!
-    @IBOutlet weak var gracePeriod: SCTextField!
-    @IBOutlet weak var quickPayLines: SCTextField!
     @IBOutlet weak var cardNumber: SCTextField!
-    
+    @IBOutlet weak var repaymentWarningDay: UIButton!
     @IBOutlet weak var guideContainerView: UIView!
     @IBOutlet weak var guideImageView: UIImageView!
     
@@ -70,14 +68,13 @@ class SCAddCreditCardViewController: UIViewController {
         
         if editBtn.isSelected {
             // 保存
-            guard let (cardNumber, creditBillDate, creditLines, quikPayLines, gracePeriod) = checkInput() else {
+            guard let (cardNumber, creditBillDate, creditLines, repaymentWarningDay) = checkInput() else {
                 return
             }
             let rs = CardInfoManager.update(cardNumber: cardNumber,
                                    creditBillDate: Int16(creditBillDate)!,
                                    creditLines: Int32(creditLines)!,
-                                   quickPayLines: Int16(quikPayLines)!,
-                                   gracePeriod: Int16(gracePeriod)!)
+                                   repaymentWarningDay: Int16(repaymentWarningDay)!)
             if let rs = rs {
                 showSuccessHud(title: "保存成功")
                 doneSubject.onNext(rs)
@@ -90,15 +87,12 @@ class SCAddCreditCardViewController: UIViewController {
             }
             
         } else {
-            print("edit....")
+            
             self.creditLines.isEnabled = true
             self.creditBillDate.isEnabled = true
-            self.gracePeriod.isEnabled = true
-            self.quickPayLines.isEnabled = true
+            self.repaymentWarningDay.isEnabled = true
             
             self.creditLines.textColor = UIColor.black
-            self.gracePeriod.textColor = UIColor.black
-            self.quickPayLines.textColor = UIColor.black
             self.creditBillDate.setTitleColor(UIColor.black, for: .normal)
             
             UIView.transition(with: editBtn, duration: 0.5, options: .curveEaseOut, animations: {
@@ -117,19 +111,16 @@ class SCAddCreditCardViewController: UIViewController {
             self.bankName.text = SCBank.Names[index]
             self.creditLines.text = String(cardInfo.creditLines)
             self.creditBillDate.setTitle(String(cardInfo.creditBillDate), for: .normal)
-            self.gracePeriod.text = String(cardInfo.gracePeriod)
-            self.quickPayLines.text = String(cardInfo.quickPayLines)
             self.cardNumber.text = cardInfo.cardNumber
+            self.repaymentWarningDay.setTitle(String(cardInfo.repaymentWarningDay), for: .normal)
             
             self.creditLines.textColor = UIColor.lightGray
-            self.gracePeriod.textColor = UIColor.lightGray
-            self.quickPayLines.textColor = UIColor.lightGray
             self.creditBillDate.setTitleColor(UIColor.lightGray, for: .normal)
+            self.repaymentWarningDay.setTitleColor(UIColor.lightGray, for: .normal)
             
             self.creditLines.isEnabled = false
             self.creditBillDate.isEnabled = false
-            self.gracePeriod.isEnabled = false
-            self.quickPayLines.isEnabled = false
+            self.repaymentWarningDay.isEnabled = false
             
             self.cardNumber.textColor = UIColor.lightGray
             self.cardNumber.isEnabled = false
@@ -156,6 +147,9 @@ class SCAddCreditCardViewController: UIViewController {
         
         creditBillDate.layer.borderWidth = 1.0
         creditBillDate.layer.borderColor = UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0).cgColor
+        
+        repaymentWarningDay.layer.borderWidth = 1.0
+        repaymentWarningDay.layer.borderColor = UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0).cgColor
         
         maskView = UIView(frame: UIScreen.main.bounds)
         editBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 50.0, height: 44.0))
@@ -193,41 +187,39 @@ class SCAddCreditCardViewController: UIViewController {
     ////////////////////////////////////////////////////////////////////////////////////////
     @IBAction func selectCreditBillDate(_ sender: UIButton) {
         
-        creditLines.resignFirstResponder()
-        gracePeriod.resignFirstResponder()
-        quickPayLines.resignFirstResponder()
-        cardNumber.resignFirstResponder()
-        selectDayWithMaxDay(maxDay: 28)
+        view.endEditing(true)
+        selectDayWithMaxDay(maxDay: 28, sender: sender)
     }
     
-    func checkInput() -> (String, String, String, String, String)? {
+    @IBAction func selectRepaymentWarningDay(_ sender: UIButton) {
+        view.endEditing(true)
+        selectDayWithMaxDay(maxDay: 28, sender: sender)
+    }
+    
+    func checkInput() -> (String, String, String, String)? {
         guard let cardNumber = self.cardNumber.text, !cardNumber.isEmpty, cardNumber.count == 16 else {
             showErrorHud(title: "信用卡卡号不合法")
             return nil
         }
-        guard let creditBillDate = self.creditBillDate.titleLabel?.text else {
+        guard let creditBillDate = self.creditBillDate.titleLabel?.text, !creditBillDate.isEmpty else {
             showErrorHud(title: "账单日为空")
             return nil
         }
-        guard let creditLines = self.creditLines.text else {
+        guard let creditLines = self.creditLines.text, !creditLines.isEmpty else {
             showErrorHud(title: "信用额度为空")
             return nil
         }
-        guard let quikPayLines = self.quickPayLines.text else {
-            showErrorHud(title: "云闪付限额为空")
-            return nil
-        }
-        guard let gracePeriod = self.gracePeriod.text, Int(gracePeriod)! < 60 else {
-            showErrorHud(title: "免息期不合法")
+        guard let repaymentWarningDay = self.repaymentWarningDay.titleLabel?.text, !repaymentWarningDay.isEmpty else {
+            showErrorHud(title: "还款提醒为空")
             return nil
         }
         
-        return (cardNumber, creditBillDate, creditLines, quikPayLines, gracePeriod)
+        return (cardNumber, creditBillDate, creditLines, repaymentWarningDay)
     }
     
     @IBAction func save(_ sender: UIButton) {
         
-        guard let (cardNumber, creditBillDate, creditLines, quikPayLines, gracePeriod) = checkInput() else {
+        guard let (cardNumber, creditBillDate, creditLines, repaymentWarningDay) = checkInput() else {
             return
         }
         
@@ -240,9 +232,9 @@ class SCAddCreditCardViewController: UIViewController {
                              cardNumber: cardNumber,
                              creditBillDate: Int16(creditBillDate)!,
                              creditLines: Int32(creditLines)!,
-                             quickPayLines: Int16(quikPayLines)!,
-                             gracePeriod: Int16(gracePeriod)!)
+                             repaymentWarningDay: Int16(repaymentWarningDay)!)
         if let rs = rs {
+            NotificationCenter.default.post(name: SCNotificationName.newCreditCardAdded(), object: nil)
             showSuccessHud(title: "保存成功")
             doneSubject.onNext(rs)
             doneSubject.onCompleted()
@@ -265,7 +257,7 @@ class SCAddCreditCardViewController: UIViewController {
     ////////////////////////////////////////////////////////////////////////////////////////
     //              选择日期
     ////////////////////////////////////////////////////////////////////////////////////////
-    func selectDayWithMaxDay(maxDay: Int) {
+    func selectDayWithMaxDay(maxDay: Int, sender: UIButton) {
         
         self.view.addSubview(maskView)
         
@@ -285,7 +277,7 @@ class SCAddCreditCardViewController: UIViewController {
         }, completion: nil)
         
         _ = selectDayVC.selectDay.subscribe(onNext: {
-            self.creditBillDate.setTitle(String($0), for: .normal)
+            sender.setTitle(String($0), for: .normal)
         }, onCompleted: {
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
                 self.maskView.backgroundColor = UIColor.clear

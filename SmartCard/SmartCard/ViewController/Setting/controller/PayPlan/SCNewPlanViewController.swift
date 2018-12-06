@@ -25,6 +25,7 @@ class SCNewPlanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "创建刷卡计划"
         
         maskView = UIView(frame: view.bounds)
         
@@ -148,7 +149,7 @@ class SCNewPlanViewController: UIViewController {
         scHourVC.view.frame = CGRect(x: 0, y: view.bounds.height - hourViewH, width: view.bounds.width, height: hourViewH)
         scHourVC.view.transform = CGAffineTransform(translationX: 0, y: hourViewH)
         
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             scHourVC.view.transform = .identity
             self.maskView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         }, completion: nil)
@@ -158,7 +159,7 @@ class SCNewPlanViewController: UIViewController {
         _ = scHourVC.selectDay.subscribe(onNext: { hour in
             sender.setTitle(String(hour), for: .normal)
         }, onCompleted: {
-            UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 scHourVC.view.transform = CGAffineTransform(translationX: 0, y: hourViewH)
                 self.maskView.backgroundColor = UIColor.clear
             }, completion: { _ in

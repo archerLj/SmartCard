@@ -81,7 +81,7 @@ class SCPayPlanTableViewController: UITableViewController {
     func navSetting() {
         let rightNavBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44.0))
         rightNavBtn.setTitle("商户管理", for: .normal)
-        rightNavBtn.setTitleColor(UIColor(red: 155/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0), for: .normal)
+        rightNavBtn.setTitleColor(UIColor.white, for: .normal)
         rightNavBtn.addTarget(self, action: #selector(rightNavBtnAction(sender:)), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightNavBtn)
     }
@@ -107,7 +107,10 @@ extension SCPayPlanTableViewController {
         let sellerConfigure = sellerConfigures[indexPath.row]
         cell.configure(payPlan: payPlan, sellerConfigures: sellerConfigure)
         
-        if indexPath.row == 0 {
+        if payPlans.count == 1 {
+            cell.firstCellConfigure()
+            cell.lastCellConfigure()
+        } else if indexPath.row == 0 {
             cell.firstCellConfigure()
         } else if indexPath.row == payPlans.count - 1 {
             cell.lastCellConfigure()

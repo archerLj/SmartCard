@@ -98,8 +98,7 @@ extension SCCardManageViewController: UITableViewDataSource, UITableViewDelegate
                 if ci.cardNumber == cardInfo.cardNumber {
                     ci.creditLines = cardInfo.creditLines
                     ci.creditBillDate = cardInfo.creditBillDate
-                    ci.gracePeriod = cardInfo.gracePeriod
-                    ci.quickPayLines = cardInfo.quickPayLines
+                    ci.repaymentWarningDay = cardInfo.repaymentWarningDay
                     break
                 }
             }

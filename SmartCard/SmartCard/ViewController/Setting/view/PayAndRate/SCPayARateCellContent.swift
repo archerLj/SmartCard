@@ -13,6 +13,7 @@ class SCPayARateCellContent: UIView {
     @IBOutlet weak var contaienr: UIView!
     @IBOutlet weak var payWay: UILabel!
     @IBOutlet weak var rate: UILabel!
+    @IBOutlet weak var charge: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,6 @@ class SCPayARateCellContent: UIView {
     func configure(payWayARate: PayWayARate) {
         payWay.text = payWayARate.payWay
         rate.text = String(payWayARate.rate) + "%"
+        charge.text = "手续费(" + String(payWayARate.charge) + ")"
     }
 }

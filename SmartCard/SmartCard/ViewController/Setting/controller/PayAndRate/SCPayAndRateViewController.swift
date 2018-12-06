@@ -14,6 +14,7 @@ class SCPayAndRateViewController: UIViewController {
     @IBOutlet weak var addViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var payWay: UITextField!
     @IBOutlet weak var rate: UITextField!
+    @IBOutlet weak var charge: UITextField!
     var payAndRates: [PayWayARate] = []
     
     
@@ -52,7 +53,7 @@ class SCPayAndRateViewController: UIViewController {
     
     @objc func addNewPayAndRate(sender: UIButton) {
         self.addViewBottomConstraint.constant = 0
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -72,13 +73,23 @@ class SCPayAndRateViewController: UIViewController {
             return
         }
         
-        if !PayWayARateManager.save(payWay: payAWay, rate: Float(rate)!) {
+        let chargeStr = charge.text
+        var chargeNum:Float = 0
+        if let str = chargeStr, str.count > 0 {
+            guard let num = Float(str) else {
+                showErrorHud(title: "手续费不合法")
+                return
+            }
+            chargeNum = num
+        }
+        if !PayWayARateManager.save(payWay: payAWay, rate: Float(rate)!, charge: chargeNum) {
             showErrorHud(title: "保存失败！请退出重试!")
             return
         }
         
         self.payWay.text = nil
         self.rate.text = nil
+        self.charge.text = nil
         
         showSuccessHud(title: "保存成功")
         getAllPayARate()
@@ -86,8 +97,8 @@ class SCPayAndRateViewController: UIViewController {
     }
     
     func hideAddView() {
-        self.addViewBottomConstraint.constant = -150
-        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10, options: .curveLinear, animations: {
+        self.addViewBottomConstraint.constant = -200
+        UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }

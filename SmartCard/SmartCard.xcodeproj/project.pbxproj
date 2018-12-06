@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410AF02A21B9110E00792A9D /* SettleHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AF02921B9110E00792A9D /* SettleHistoryManager.swift */; };
 		413713FC219A59040087E546 /* SCBanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413713FB219A59040087E546 /* SCBanks.swift */; };
 		41371409219A68360087E546 /* FlushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41371408219A68360087E546 /* FlushViewController.swift */; };
 		4137140C219A69A40087E546 /* FlushGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137140B219A69A40087E546 /* FlushGridView.swift */; };
@@ -51,6 +52,8 @@
 		41A978FA21AFF50F00CAB8A4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A978F921AFF50F00CAB8A4 /* Login.storyboard */; };
 		41A978FE21B002B800CAB8A4 /* SCTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978FD21B002B800CAB8A4 /* SCTimer.swift */; };
 		41A9790521B0C88900CAB8A4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9790421B0C88900CAB8A4 /* UserManager.swift */; };
+		41A9791021B112E100CAB8A4 /* SCCreditCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9790F21B112E100CAB8A4 /* SCCreditCardTableViewCell.swift */; };
+		41A9791221B1351400CAB8A4 /* SCCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9791121B1351400CAB8A4 /* SCCardDetailViewController.swift */; };
 		41C2B95821AB83D9009E9F25 /* SCPayAndRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B95721AB83D9009E9F25 /* SCPayAndRateViewController.swift */; };
 		41C2B96021AB8EE1009E9F25 /* PayWayARateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */; };
 		41C2B96321AB92BF009E9F25 /* SCPayARateCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */; };
@@ -71,6 +74,15 @@
 		41D6B5D02199699500F60348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D6B5CE2199699500F60348 /* LaunchScreen.storyboard */; };
 		41D6B5DB2199699500F60348 /* SmartCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5DA2199699500F60348 /* SmartCardTests.swift */; };
 		41D6B5E62199699500F60348 /* SmartCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6B5E52199699500F60348 /* SmartCardUITests.swift */; };
+		41E5B0BD21B4F64C000F1AEC /* SCCreditNavAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0BC21B4F64C000F1AEC /* SCCreditNavAnimator.swift */; };
+		41E5B0BF21B52CB8000F1AEC /* SCSwipNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0BE21B52CB8000F1AEC /* SCSwipNowViewController.swift */; };
+		41E5B0C321B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0C221B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift */; };
+		41E5B0C521B53C81000F1AEC /* SCSelectSwipBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0C421B53C81000F1AEC /* SCSelectSwipBankTableViewCell.swift */; };
+		41E5B0C721B650D5000F1AEC /* SCSelectSwipTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0C621B650D5000F1AEC /* SCSelectSwipTypeViewController.swift */; };
+		41E5B0D221B76228000F1AEC /* PayRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0D121B76228000F1AEC /* PayRecordManager.swift */; };
+		41E5B0D421B8BF4B000F1AEC /* SCNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0D321B8BF4B000F1AEC /* SCNotificationName.swift */; };
+		41E5B0D821B8C3B1000F1AEC /* SCCreditCardTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5B0D721B8C3B1000F1AEC /* SCCreditCardTopView.xib */; };
+		41E5B0DA21B8C3C0000F1AEC /* SCCreditCardTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0D921B8C3C0000F1AEC /* SCCreditCardTopView.swift */; };
 		614990F471494004DD3DEE37 /* Pods_SmartCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E244492EACA87A06BDF0AC /* Pods_SmartCard.framework */; };
 		BB4AB775665689F56A862664 /* Pods_SmartCardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204DEED513FEF778E7748C59 /* Pods_SmartCardTests.framework */; };
 		C6689F0613B55A4F365B21E0 /* Pods_SmartCardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E237ADF28907326E6FDC37D /* Pods_SmartCardUITests.framework */; };
@@ -98,6 +110,7 @@
 		1E237ADF28907326E6FDC37D /* Pods_SmartCardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204DEED513FEF778E7748C59 /* Pods_SmartCardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E244492EACA87A06BDF0AC /* Pods_SmartCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		410AF02921B9110E00792A9D /* SettleHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleHistoryManager.swift; sourceTree = "<group>"; };
 		413713FB219A59040087E546 /* SCBanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBanks.swift; sourceTree = "<group>"; };
 		41371408219A68360087E546 /* FlushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushViewController.swift; sourceTree = "<group>"; };
 		4137140B219A69A40087E546 /* FlushGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushGridView.swift; sourceTree = "<group>"; };
@@ -149,6 +162,8 @@
 		41A9790121B0C7FE00CAB8A4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		41A9790421B0C88900CAB8A4 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		41A9790621B0D75A00CAB8A4 /* SmartCard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartCard-Bridging-Header.h"; sourceTree = "<group>"; };
+		41A9790F21B112E100CAB8A4 /* SCCreditCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCreditCardTableViewCell.swift; sourceTree = "<group>"; };
+		41A9791121B1351400CAB8A4 /* SCCardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCardDetailViewController.swift; sourceTree = "<group>"; };
 		41C2B95721AB83D9009E9F25 /* SCPayAndRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayAndRateViewController.swift; sourceTree = "<group>"; };
 		41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWayARateManager.swift; sourceTree = "<group>"; };
 		41C2B96221AB92BF009E9F25 /* SCPayARateCellContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayARateCellContent.swift; sourceTree = "<group>"; };
@@ -159,8 +174,6 @@
 		41C2B96E21ABC714009E9F25 /* SCSellerCellContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCSellerCellContent.xib; sourceTree = "<group>"; };
 		41C2B97121ABCB23009E9F25 /* SellerConfigure+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SellerConfigure+CoreDataClass.swift"; sourceTree = "<group>"; };
 		41C2B97221ABCB23009E9F25 /* SellerConfigure+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SellerConfigure+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		41C2B97521ABCB50009E9F25 /* PayWayARate+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayWayARate+CoreDataClass.swift"; sourceTree = "<group>"; };
-		41C2B97621ABCB50009E9F25 /* PayWayARate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PayWayARate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		41C2B97921ABCB5E009E9F25 /* SellerConfigureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerConfigureManager.swift; sourceTree = "<group>"; };
 		41C2B97B21ABD654009E9F25 /* SCNewPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNewPlanViewController.swift; sourceTree = "<group>"; };
 		41C2B97D21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNewPlanTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +194,21 @@
 		41D6B5E12199699500F60348 /* SmartCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D6B5E52199699500F60348 /* SmartCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCardUITests.swift; sourceTree = "<group>"; };
 		41D6B5E72199699500F60348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41E5B0BC21B4F64C000F1AEC /* SCCreditNavAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCreditNavAnimator.swift; sourceTree = "<group>"; };
+		41E5B0BE21B52CB8000F1AEC /* SCSwipNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSwipNowViewController.swift; sourceTree = "<group>"; };
+		41E5B0C221B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSelectSwipBanksViewController.swift; sourceTree = "<group>"; };
+		41E5B0C421B53C81000F1AEC /* SCSelectSwipBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSelectSwipBankTableViewCell.swift; sourceTree = "<group>"; };
+		41E5B0C621B650D5000F1AEC /* SCSelectSwipTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSelectSwipTypeViewController.swift; sourceTree = "<group>"; };
+		41E5B0C821B67303000F1AEC /* PayWayARate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayWayARate+CoreDataProperties.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayWayARate/PayWayARate+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		41E5B0C921B67303000F1AEC /* PayWayARate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayWayARate+CoreDataClass.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayWayARate/PayWayARate+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		41E5B0D121B76228000F1AEC /* PayRecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayRecordManager.swift; sourceTree = "<group>"; };
+		41E5B0D321B8BF4B000F1AEC /* SCNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNotificationName.swift; sourceTree = "<group>"; };
+		41E5B0D721B8C3B1000F1AEC /* SCCreditCardTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCCreditCardTopView.xib; sourceTree = "<group>"; };
+		41E5B0D921B8C3C0000F1AEC /* SCCreditCardTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCreditCardTopView.swift; sourceTree = "<group>"; };
+		41E5B0DF21B905D7000F1AEC /* PayRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayRecord+CoreDataProperties.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayRecord/PayRecord+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		41E5B0E021B905D7000F1AEC /* PayRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PayRecord+CoreDataClass.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/PayRecord/PayRecord+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		41E5B0E421B90B7F000F1AEC /* SettleHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettleHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		41E5B0E521B90B7F000F1AEC /* SettleHistory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SettleHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		45A888EA0D258044E4BFB38E /* Pods-SmartCardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartCardUITests/Pods-SmartCardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67C127A11425734328CF74EF /* Pods-SmartCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartCard/Pods-SmartCard.release.xcconfig"; sourceTree = "<group>"; };
 		6AEA21EBCF562998D8646768 /* Pods-SmartCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartCard/Pods-SmartCard.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +286,7 @@
 				413713FB219A59040087E546 /* SCBanks.swift */,
 				4140DC4B21A2B75100494F98 /* CommonMethods.swift */,
 				41A978FD21B002B800CAB8A4 /* SCTimer.swift */,
+				41E5B0D321B8BF4B000F1AEC /* SCNotificationName.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -343,7 +372,9 @@
 		4140DC3821A2B38500494F98 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				4140DC4121A2B43A00494F98 /* SCCreditCardViewController.swift */,
+				41E5B0BB21B4F5EA000F1AEC /* Animate */,
+				41A9790B21B112B600CAB8A4 /* view */,
+				41A9790A21B112AB00CAB8A4 /* controller */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -392,6 +423,8 @@
 		4140DCB521A648B500494F98 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				41E5B0E321B90B68000F1AEC /* SettleHistory */,
+				41E5B0CC21B7613E000F1AEC /* PayRecord */,
 				41A978FF21B0C7E100CAB8A4 /* User */,
 				41A978EB21AFD21600CAB8A4 /* Gesture */,
 				41C2B97F21ABEC6A009E9F25 /* PayPlan */,
@@ -462,6 +495,29 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		41A9790A21B112AB00CAB8A4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4140DC4121A2B43A00494F98 /* SCCreditCardViewController.swift */,
+				41A9791121B1351400CAB8A4 /* SCCardDetailViewController.swift */,
+				41E5B0BE21B52CB8000F1AEC /* SCSwipNowViewController.swift */,
+				41E5B0C221B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift */,
+				41E5B0C621B650D5000F1AEC /* SCSelectSwipTypeViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41A9790B21B112B600CAB8A4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				41A9790F21B112E100CAB8A4 /* SCCreditCardTableViewCell.swift */,
+				41E5B0C421B53C81000F1AEC /* SCSelectSwipBankTableViewCell.swift */,
+				41E5B0D721B8C3B1000F1AEC /* SCCreditCardTopView.xib */,
+				41E5B0D921B8C3C0000F1AEC /* SCCreditCardTopView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		41C2B95321AB837C009E9F25 /* CardManage */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,8 +560,8 @@
 		41C2B95E21AB8EC8009E9F25 /* PayWayARate */ = {
 			isa = PBXGroup;
 			children = (
-				41C2B97521ABCB50009E9F25 /* PayWayARate+CoreDataClass.swift */,
-				41C2B97621ABCB50009E9F25 /* PayWayARate+CoreDataProperties.swift */,
+				41E5B0C921B67303000F1AEC /* PayWayARate+CoreDataClass.swift */,
+				41E5B0C821B67303000F1AEC /* PayWayARate+CoreDataProperties.swift */,
 				41C2B95F21AB8EE1009E9F25 /* PayWayARateManager.swift */,
 			);
 			path = PayWayARate;
@@ -618,6 +674,34 @@
 				41D6B5E72199699500F60348 /* Info.plist */,
 			);
 			path = SmartCardUITests;
+			sourceTree = "<group>";
+		};
+		41E5B0BB21B4F5EA000F1AEC /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				41E5B0BC21B4F64C000F1AEC /* SCCreditNavAnimator.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
+		41E5B0CC21B7613E000F1AEC /* PayRecord */ = {
+			isa = PBXGroup;
+			children = (
+				41E5B0E021B905D7000F1AEC /* PayRecord+CoreDataClass.swift */,
+				41E5B0DF21B905D7000F1AEC /* PayRecord+CoreDataProperties.swift */,
+				41E5B0D121B76228000F1AEC /* PayRecordManager.swift */,
+			);
+			path = PayRecord;
+			sourceTree = "<group>";
+		};
+		41E5B0E321B90B68000F1AEC /* SettleHistory */ = {
+			isa = PBXGroup;
+			children = (
+				41E5B0E521B90B7F000F1AEC /* SettleHistory+CoreDataClass.swift */,
+				41E5B0E421B90B7F000F1AEC /* SettleHistory+CoreDataProperties.swift */,
+				410AF02921B9110E00792A9D /* SettleHistoryManager.swift */,
+			);
+			path = SettleHistory;
 			sourceTree = "<group>";
 		};
 		78EFC1B726645B2489DAE5D1 /* Pods */ = {
@@ -758,6 +842,7 @@
 				4140DC4621A2B55D00494F98 /* Card.storyboard in Resources */,
 				41C2B96521AB92CA009E9F25 /* SCPayARateCellContent.xib in Resources */,
 				41D6B5D02199699500F60348 /* LaunchScreen.storyboard in Resources */,
+				41E5B0D821B8C3B1000F1AEC /* SCCreditCardTopView.xib in Resources */,
 				4140DC4821A2B56400494F98 /* History.storyboard in Resources */,
 				4140DC4E21A3903400494F98 /* Assets.xcassets in Resources */,
 				4140DC4A21A2B56C00494F98 /* Setting.storyboard in Resources */,
@@ -870,11 +955,14 @@
 				4140DC6821A5329000494F98 /* SCSelectBankViewController.swift in Sources */,
 				4140DC5A21A3D2DD00494F98 /* SCSettingTableViewCell.swift in Sources */,
 				4140DC5C21A3D43200494F98 /* String_Ext.swift in Sources */,
+				41E5B0D421B8BF4B000F1AEC /* SCNotificationName.swift in Sources */,
 				4140DC5421A3A7EE00494F98 /* StoryboardIdentifiable.swift in Sources */,
+				41E5B0DA21B8C3C0000F1AEC /* SCCreditCardTopView.swift in Sources */,
 				41C2B95821AB83D9009E9F25 /* SCPayAndRateViewController.swift in Sources */,
 				41C2B97E21ABE6C2009E9F25 /* SCNewPlanTableViewCell.swift in Sources */,
 				4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */,
 				4140DC6421A4EBE500494F98 /* SCTextField.swift in Sources */,
+				41E5B0C521B53C81000F1AEC /* SCSelectSwipBankTableViewCell.swift in Sources */,
 				41C2B98521ABECE0009E9F25 /* PayPlanManager.swift in Sources */,
 				41A978F421AFF4EC00CAB8A4 /* SCGestureLoginViewController.swift in Sources */,
 				4137140E219A69AE0087E546 /* FlushItemView.swift in Sources */,
@@ -883,6 +971,7 @@
 				41A978E021AD1F7700CAB8A4 /* SCProfileTableViewCell1.swift in Sources */,
 				4140DC5021A39BBE00494F98 /* SCCardManageViewController.swift in Sources */,
 				41A978FE21B002B800CAB8A4 /* SCTimer.swift in Sources */,
+				410AF02A21B9110E00792A9D /* SettleHistoryManager.swift in Sources */,
 				41C2B96A21ABC3BB009E9F25 /* SCSellerManageViewController.swift in Sources */,
 				41C2B96821ABC21C009E9F25 /* SCPayPlanTableViewController.swift in Sources */,
 				4140DC4C21A2B75100494F98 /* CommonMethods.swift in Sources */,
@@ -890,13 +979,16 @@
 				41A978E421AD1F9000CAB8A4 /* SCProfileTableViewCell3.swift in Sources */,
 				4140DC6621A52B5700494F98 /* UIColor_Ext.swift in Sources */,
 				41C2B97C21ABD654009E9F25 /* SCNewPlanViewController.swift in Sources */,
+				41E5B0C321B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift in Sources */,
 				4140DC4221A2B43A00494F98 /* SCCreditCardViewController.swift in Sources */,
 				41A978F121AFD27100CAB8A4 /* GestureManager.swift in Sources */,
 				41C2B97A21ABCB5E009E9F25 /* SellerConfigureManager.swift in Sources */,
+				41A9791021B112E100CAB8A4 /* SCCreditCardTableViewCell.swift in Sources */,
 				41371413219AA53E0087E546 /* LogoView.swift in Sources */,
 				4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */,
 				4140DC3E21A2B42800494F98 /* SCSettingViewController.swift in Sources */,
 				4140DC6A21A5336800494F98 /* SCSelectBankTableViewCell.swift in Sources */,
+				41A9791221B1351400CAB8A4 /* SCCardDetailViewController.swift in Sources */,
 				41D6B5CB2199699300F60348 /* SmartCard.xcdatamodeld in Sources */,
 				4140DC4421A2B45700494F98 /* SCMainTabBarViewController.swift in Sources */,
 				4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */,
@@ -912,14 +1004,18 @@
 				41A978EA21AF808500CAB8A4 /* SCGestureView.swift in Sources */,
 				41A978DD21AD161B00CAB8A4 /* SCProfileViewController.swift in Sources */,
 				41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */,
+				41E5B0C721B650D5000F1AEC /* SCSelectSwipTypeViewController.swift in Sources */,
 				4140DC6021A3F96300494F98 /* SCAddCreditCardViewController.swift in Sources */,
+				41E5B0BF21B52CB8000F1AEC /* SCSwipNowViewController.swift in Sources */,
 				41C2B96021AB8EE1009E9F25 /* PayWayARateManager.swift in Sources */,
 				41A9790521B0C88900CAB8A4 /* UserManager.swift in Sources */,
 				41371409219A68360087E546 /* FlushViewController.swift in Sources */,
 				41C2B96321AB92BF009E9F25 /* SCPayARateCellContent.swift in Sources */,
 				41371411219AA2BC0087E546 /* Constants.swift in Sources */,
+				41E5B0BD21B4F64C000F1AEC /* SCCreditNavAnimator.swift in Sources */,
 				41A978E221AD1F8600CAB8A4 /* SCProfileTableViewCell2.swift in Sources */,
 				41A978E621AD365100CAB8A4 /* PHPhotoLibrary_Ext.swift in Sources */,
+				41E5B0D221B76228000F1AEC /* PayRecordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

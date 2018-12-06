@@ -15,12 +15,35 @@ class GestureManager {
             return false
         }
         
+        if !deleteAll() {
+            return false
+        }
+        
         let entity = NSEntityDescription.entity(forEntityName: "Gesture", in: manageContext)!
         let gesture = NSManagedObject(entity: entity, insertInto: manageContext) as! Gesture
         
         gesture.gestureSequence = sequence
         do {
             try manageContext.save()
+            return true
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return false
+        }
+    }
+    
+    class func deleteAll() -> Bool {
+        guard let manageContext = getManagedContext() else {
+            return false
+        }
+        
+        let fetch: NSFetchRequest<Gesture> = Gesture.fetchRequest()
+        
+        do {
+            let resuts = try manageContext.fetch(fetch)
+            for g in resuts {
+                manageContext.delete(g)
+            }
             return true
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")

@@ -36,19 +36,31 @@ class FlushViewController: UIViewController {
         logoImageView.center = CGPoint(x: view.center.x, y: view.center.y - 50.0)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         let gesture = GestureManager.get()
-        delay(4.0) {
-            if let _ = gesture {
-                let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
-                UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
-            } else {
-                let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
-                let navVC = UINavigationController(rootViewController: passwordLoginVC)
-                UIApplication.shared.keyWindow?.rootViewController = navVC
-            }
+        if let _ = gesture {
+            let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+            UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
+        } else {
+            let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+            let navVC = UINavigationController(rootViewController: passwordLoginVC)
+            UIApplication.shared.keyWindow?.rootViewController = navVC
         }
+//        delay(4.0) {
+//            if let _ = gesture {
+//                let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+//                UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
+//            } else {
+//                let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+//                let navVC = UINavigationController(rootViewController: passwordLoginVC)
+//                UIApplication.shared.keyWindow?.rootViewController = navVC
+//            }
+//        }
     }
 }

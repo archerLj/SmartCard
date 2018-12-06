@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class PayWayARateManager {
-    class func save(payWay: String, rate: Float) -> Bool {
+    class func save(payWay: String, rate: Float, charge: Float) -> Bool {
         guard let manageContext = getManagedContext() else {
             return false
         }
@@ -20,6 +20,7 @@ class PayWayARateManager {
         
         payWayARate.payWay = payWay
         payWayARate.rate = rate
+        payWayARate.charge = charge
         
         do {
             try manageContext.save()

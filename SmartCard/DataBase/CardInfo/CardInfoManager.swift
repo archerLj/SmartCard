@@ -14,8 +14,7 @@ class CardInfoManager {
               cardNumber: String,
               creditBillDate: Int16,
               creditLines: Int32,
-              quickPayLines: Int16,
-              gracePeriod: Int16) -> CardInfo? {
+              repaymentWarningDay: Int16) -> CardInfo? {
         
         guard let managedContext = getManagedContext() else {
             return nil
@@ -28,8 +27,7 @@ class CardInfoManager {
         cardInfo.cardNumber = cardNumber
         cardInfo.creditBillDate = creditBillDate
         cardInfo.creditLines = creditLines
-        cardInfo.quickPayLines = quickPayLines
-        cardInfo.gracePeriod = gracePeriod
+        cardInfo.repaymentWarningDay = repaymentWarningDay
         
         do {
             try managedContext.save()
@@ -43,8 +41,7 @@ class CardInfoManager {
     class func update(cardNumber: String,
                       creditBillDate: Int16,
                       creditLines: Int32,
-                      quickPayLines: Int16,
-                      gracePeriod: Int16) -> CardInfo? {
+                      repaymentWarningDay: Int16) -> CardInfo? {
         
         guard let cardInfo = get(cardNumber: cardNumber) else {
             return nil
@@ -56,8 +53,7 @@ class CardInfoManager {
         
         cardInfo.creditBillDate = creditBillDate
         cardInfo.creditLines = creditLines
-        cardInfo.quickPayLines = quickPayLines
-        cardInfo.gracePeriod = gracePeriod
+        cardInfo.repaymentWarningDay = repaymentWarningDay
         
         do {
             try managedContext.save()
@@ -112,5 +108,18 @@ class CardInfoManager {
             print("\(error), \(error.userInfo)")
             return nil
         }
+    }
+    
+    /// 获取所有信用卡信息并按账单日分组
+    class func getAllGroupedByCreditBillDate() -> [[CardInfo]]? {
+        guard let rs = getAll() else {
+            return nil
+        }
+        
+        return Dictionary(grouping: rs, by: {$0.creditBillDate}).map{$1}.sorted(by: { (a, b) -> Bool in
+            let a0 = a[0]
+            let b0 = b[0]
+            return a0.creditBillDate < b0.creditBillDate
+        })
     }
 }

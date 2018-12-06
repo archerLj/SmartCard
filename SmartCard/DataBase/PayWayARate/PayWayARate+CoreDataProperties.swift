@@ -2,7 +2,7 @@
 //  PayWayARate+CoreDataProperties.swift
 //  
 //
-//  Created by archerLj on 2018/11/26.
+//  Created by archerLj on 2018/12/4.
 //
 //
 
@@ -16,10 +16,11 @@ extension PayWayARate {
         return NSFetchRequest<PayWayARate>(entityName: "PayWayARate")
     }
 
-    /// 刷卡方式
+    /// 支付方式
     @NSManaged public var payWay: String?
-    
     /// 费率
     @NSManaged public var rate: Float
+    /// 单笔手续费
+    @NSManaged public var charge: Float
 
 }

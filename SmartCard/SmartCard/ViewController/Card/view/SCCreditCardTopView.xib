@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SCCreditCardTopView" customModule="SmartCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上期刷卡量：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIf-lg-g6Q">
+                    <rect key="frame" x="75.5" y="15" width="104" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(手续费230.3)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmK-Nz-Nj9">
+                    <rect key="frame" x="184.5" y="17" width="91" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期刷卡量：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpF-Bj-npr">
+                    <rect key="frame" x="75.5" y="51" width="104" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(手续费230.3)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSx-vT-4gg">
+                    <rect key="frame" x="184.5" y="53" width="91" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.75686274509999996" green="0.73333333329999995" blue="0.078431372550000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="hIf-lg-g6Q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-60" id="8pL-GD-I0t"/>
+                <constraint firstItem="hIf-lg-g6Q" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="HZj-j6-kbd"/>
+                <constraint firstItem="PmK-Nz-Nj9" firstAttribute="leading" secondItem="hIf-lg-g6Q" secondAttribute="trailing" constant="5" id="JBM-xL-Yja"/>
+                <constraint firstItem="bSx-vT-4gg" firstAttribute="leading" secondItem="JpF-Bj-npr" secondAttribute="trailing" constant="5" id="KSR-l3-RxB"/>
+                <constraint firstItem="hIf-lg-g6Q" firstAttribute="centerX" secondItem="JpF-Bj-npr" secondAttribute="centerX" id="WaT-08-W7X"/>
+                <constraint firstItem="JpF-Bj-npr" firstAttribute="top" secondItem="hIf-lg-g6Q" secondAttribute="bottom" constant="15" id="kua-ak-v7O"/>
+                <constraint firstItem="PmK-Nz-Nj9" firstAttribute="centerY" secondItem="hIf-lg-g6Q" secondAttribute="centerY" id="mv7-fK-Gcf"/>
+                <constraint firstItem="bSx-vT-4gg" firstAttribute="centerY" secondItem="JpF-Bj-npr" secondAttribute="centerY" id="wKW-qK-v1l"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lastSettleCharge" destination="PmK-Nz-Nj9" id="xmC-E1-xKq"/>
+                <outlet property="lastSettlePayNum" destination="hIf-lg-g6Q" id="Bts-13-b62"/>
+                <outlet property="thisSettleCharge" destination="bSx-vT-4gg" id="cav-fu-mRm"/>
+                <outlet property="thisSettlePayNum" destination="JpF-Bj-npr" id="T3n-Se-jHs"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="-210.49475262368819"/>
+        </view>
+    </objects>
+</document>
