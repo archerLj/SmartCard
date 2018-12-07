@@ -8,12 +8,20 @@
 
 import UIKit
 import CoreData
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var currentUser = Variable<User?>(nil)
     var window: UIWindow?
 
+    class func getLastUserInfo() -> User? {
+        if let userName = UserDefaults.standard.string(forKey: "U_K_userName") {
+            return UserManager.getUser(account: userName)
+        }
+        return nil
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.rootViewController = FlushViewController()
         window?.makeKeyAndVisible()
+        
+        _ = AppDelegate.currentUser.asObservable().subscribe(onNext: { user in
+            if let u = user {
+                UserDefaults.standard.setValue(u.account, forKey: "U_K_userName")
+            }
+        })
+        
         return true
     }
     

@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  
 //
-//  Created by archerLj on 2018/11/30.
+//  Created by archerLj on 2018/12/7.
 //
 //
 

@@ -14,10 +14,13 @@ class SCPasswdLoginViewController: UIViewController {
     @IBOutlet weak var account: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginbtn: UIButton!
+    var userInfo: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        postrait.layer.cornerRadius = postrait.bounds.width/2
+        postrait.clipsToBounds = true
         self.navigationController?.delegate = self
         adapteKeyboard = true
         self.account.layer.borderWidth = 3.0
@@ -25,6 +28,13 @@ class SCPasswdLoginViewController: UIViewController {
         self.password.layer.borderColor = UIColor.white.cgColor
         self.password.layer.borderWidth = 3.0
         self.loginbtn.layer.cornerRadius = 5.0
+        
+        if let userInfo = userInfo {
+            account.text = userInfo.account
+            if let p = userInfo.postrait {
+                postrait.image = UIImage(data: p)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,13 +58,13 @@ class SCPasswdLoginViewController: UIViewController {
             return
         }
         
-        if !UserManager.isUserOrPwdPassed(account: account, pwd: pwd) {
+        if let user = UserManager.isUserOrPwdPassed(account: account, pwd: pwd) {
+            AppDelegate.currentUser.value = user
+            let mainVC = SCMainTabBarViewController()
+            UIApplication.shared.keyWindow?.rootViewController = mainVC
+        } else {
             showErrorHud(title: "账号和密码不匹配")
-            return
         }
-        
-        let mainVC = SCMainTabBarViewController()
-        UIApplication.shared.keyWindow?.rootViewController = mainVC
     }
     
     @IBAction

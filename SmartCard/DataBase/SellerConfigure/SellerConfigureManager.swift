@@ -55,7 +55,7 @@ class SellerConfigureManager {
         
         do {
             let results = try manageContext.fetch(fetch)
-            return results
+            return results.count > 0 ? results : nil
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")
             return nil

@@ -24,6 +24,7 @@ class SCSwipNowViewController: UIViewController {
     var payNumNow = Variable<Int>(0)
     var payRateNow = Variable<(Float, Float)>((0,0))
     let bag = DisposeBag()
+    var payNumsToday = [Float]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +116,9 @@ class SCSwipNowViewController: UIViewController {
     
     @IBAction
     func showPayTypes(sender: UIButton) {
+        
+        view.endEditing(true)
+        
         view.addSubview(maskView)
         let selectVC = SCSelectSwipTypeViewController()
         selectVC.willMove(toParent: self)

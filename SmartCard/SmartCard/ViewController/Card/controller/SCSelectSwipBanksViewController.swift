@@ -13,6 +13,7 @@ class SCSelectSwipBanksViewController: UITableViewController {
     var checkedArr = [Bool]()
     var selected = Set<Int>()
     var myBanks = [CardInfo]()
+    var payNumsToday = [Float?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,11 @@ class SCSelectSwipBanksViewController: UITableViewController {
         
         navSetting()
         getData()
+        NotificationCenter.default.addObserver(self, selector: #selector(getPayNums(notification:)), name: SCNotificationName.payActionSuccess(), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func getData() {
@@ -27,6 +33,13 @@ class SCSelectSwipBanksViewController: UITableViewController {
             myBanks = cis
             checkedArr = [Bool](repeating: false, count: cis.count)
         }
+        
+        getPayNums()
+    }
+    
+    @objc func getPayNums(notification: Notification? = nil) {
+        let bankIDs = myBanks.map { $0.bankID }
+        payNumsToday = PayRecordManager.getPayNumsOfToday(bankIDs: bankIDs)
         tableView.reloadData()
     }
     
@@ -58,7 +71,8 @@ class SCSelectSwipBanksViewController: UITableViewController {
         }
         
         let cardInfo = myBanks[indexPath.row]
-        cell.configure(bankIndex: cardInfo.bankID, checked: checkedArr[indexPath.row])
+        let payNum = payNumsToday[indexPath.row]
+        cell.configure(bankIndex: cardInfo.bankID, checked: checkedArr[indexPath.row], payNumsOfToday: payNum)
         cell.selectionStyle = .none
         return cell
     }

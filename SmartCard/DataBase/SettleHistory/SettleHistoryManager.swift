@@ -39,18 +39,22 @@ class SettleHistoryManager {
         
         do {
             let results = try manageContext.fetch(fetch)
-            var rs = Dictionary(grouping: results, by: { $0.settleDate }).map {$1}
-            rs.sort { (a, b) -> Bool in
-                let aDate = a[0].settleDate!
-                let bDate = b[0].settleDate!
-                if aDate.compare(bDate) == .orderedDescending {
-                    return true
+            if results.count > 0 {
+                var rs = Dictionary(grouping: results, by: { $0.settleDate }).map {$1}
+                rs.sort { (a, b) -> Bool in
+                    let aDate = a[0].settleDate!
+                    let bDate = b[0].settleDate!
+                    if aDate.compare(bDate) == .orderedDescending {
+                        return true
+                    }
+                    return false
                 }
-                return false
+                let payNums = rs[0].map { $0.payNum }.reduce(0, +)
+                let charges = rs[0].map { $0.charge }.reduce(0, +)
+                return (payNums, charges)
+            } else {
+                return (0, 0)
             }
-            let payNums = rs[0].map { $0.payNum }.reduce(0, +)
-            let charges = rs[0].map { $0.charge }.reduce(0, +)
-            return (payNums, charges)
             
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")

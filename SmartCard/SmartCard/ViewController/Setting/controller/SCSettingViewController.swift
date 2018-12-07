@@ -26,6 +26,19 @@ class SCSettingViewController: UIViewController {
         
         tableViewHeaderSetting()
         tableViewFooterSetting()
+        NotificationCenter.default.addObserver(self, selector: #selector(postraitUpdated(notification:)), name: SCNotificationName.postaritUpdated(), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func postraitUpdated(notification: Notification? = nil) {
+        if let postraitData = AppDelegate.currentUser.value?.postrait {
+            if let image = UIImage(data: postraitData) {
+                postrait.setImage(image, for: .normal)
+            }
+        }
     }
     
     func tableViewFooterSetting() {
@@ -36,8 +49,27 @@ class SCSettingViewController: UIViewController {
         logoutBtn.setTitleColor(UIColor(red: 267/255.0, green: 36/255.0, blue: 0, alpha: 1.0), for: .normal)
         footerView.addSubview(logoutBtn)
         logoutBtn.center = footerView.center
+        logoutBtn.addTarget(self, action: #selector(logout(_:)), for: .touchUpInside)
         
         self.mainTableView.tableFooterView = footerView
+    }
+    
+    @objc func logout(_ sender: UIButton) {
+        let alertVC = UIAlertController(title: nil, message: "退出后不会删除任何历史数据，下次登录依然可以使用本账号。", preferredStyle: .actionSheet)
+        
+        let logoutAction = UIAlertAction(title: "退出登录", style: .destructive) { _ in
+            AppDelegate.currentUser.value = nil
+            let user = AppDelegate.getLastUserInfo()
+            let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+            passwordLoginVC.userInfo = user
+            let navVC = UINavigationController(rootViewController: passwordLoginVC)
+            UIApplication.shared.keyWindow?.rootViewController = navVC
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alertVC.addAction(logoutAction)
+        alertVC.addAction(cancelAction)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     func tableViewHeaderSetting() {
@@ -66,6 +98,8 @@ class SCSettingViewController: UIViewController {
         nickName.text = "ArcherLj"
         
         self.mainTableView.tableHeaderView = headerView
+        
+        postraitUpdated()
     }
     
     @objc func showProfile(sender: UIButton) {
@@ -103,6 +137,10 @@ extension SCSettingViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             let payAndRateVC: SCPayAndRateViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
             self.navigationController?.pushViewController(payAndRateVC, animated: true)
+        case 3:
+            let warning = SCAlert.showWarning(title: "提示", message: "该功能暂未开放，敬请期待", cancelBtnTitle: "期待")
+            self.present(warning, animated: true, completion: nil)
+            return
         default:
             break
         }

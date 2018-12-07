@@ -47,6 +47,13 @@ class SCPayPlanTableViewController: UITableViewController {
     }
     
     @objc func addNewPlan(sender: UIButton) {
+        
+        guard let _ = SellerConfigureManager.getAll() else {
+            let warning = SCAlert.showWarning(title: "提示", message: "请先点击右上角 商户管理 添加商户", cancelBtnTitle: "知道了")
+            self.present(warning, animated: true, completion: nil)
+            return
+        }
+        
         let newPlanVC: SCNewPlanViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
         self.navigationController?.pushViewController(newPlanVC, animated: true)
         _ = newPlanVC.addResult.subscribe(onNext: { newPlan in

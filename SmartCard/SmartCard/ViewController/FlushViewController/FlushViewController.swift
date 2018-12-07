@@ -22,13 +22,6 @@ class FlushViewController: UIViewController {
         view.addSubview(flushGridView)
         flushGridView.startAnimting()
         
-        
-//        let logoImage = UIImage(named: "appIcon_smart")!
-//        logoView = LogoView()
-//        logoView.frame = CGRect(x: 0, y: 0, width: logoImage.size.width, height: logoImage.size.height)
-//        logoView.maskImage = logoImage
-//        view.addSubview(logoView)
-//        logoView.center = view.center
         let logoImage = UIImage(named: "appIcon_smart")!
         let logoImageView = UIImageView(image: logoImage)
         logoImageView.frame = CGRect(x: 0, y: 0, width: logoImage.size.width, height: logoImage.size.height)
@@ -42,25 +35,19 @@ class FlushViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let gesture = GestureManager.get()
-        if let _ = gesture {
+        let user = AppDelegate.getLastUserInfo()
+        
+        if let gesture = user?.gestureSequence, !gesture.isEmpty {
+            
             let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+            gestrueLoginVC.userInfo = user
             UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
+            
         } else {
             let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
+            passwordLoginVC.userInfo = user
             let navVC = UINavigationController(rootViewController: passwordLoginVC)
             UIApplication.shared.keyWindow?.rootViewController = navVC
         }
-//        delay(4.0) {
-//            if let _ = gesture {
-//                let gestrueLoginVC: SCGestureLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
-//                UIApplication.shared.keyWindow?.rootViewController = gestrueLoginVC
-//            } else {
-//                let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
-//                let navVC = UINavigationController(rootViewController: passwordLoginVC)
-//                UIApplication.shared.keyWindow?.rootViewController = navVC
-//            }
-//        }
     }
 }

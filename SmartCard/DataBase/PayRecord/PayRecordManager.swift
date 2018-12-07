@@ -45,6 +45,50 @@ class PayRecordManager {
         }
     }
     
+    class func getPayRecords(date: String) -> [[PayRecord]]? {
+        guard let manageContext = getManagedContext() else {
+            return nil
+        }
+        
+        let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
+        fetch.predicate = NSPredicate(format: "payDate CONTAINS %@", date)
+        
+        do {
+            let results = try manageContext.fetch(fetch)
+            if results.count > 0 {
+                return Dictionary(grouping: results, by: { $0.bankID }).map { $1 }
+            } else {
+                return nil
+            }
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
+    /// 获取当天的刷卡量
+    class func getPayNumsOfToday(bankIDs: [Int16]) -> [Float?] {
+        guard let manageContext = getManagedContext() else {
+            return [Float?](repeating: nil, count: bankIDs.count)
+        }
+        
+        let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
+        
+        var results = [Float?]()
+        for bankID in bankIDs {
+            fetch.predicate = NSPredicate(format: "bankID = \(bankID)")
+            do {
+                let rs = try manageContext.fetch(fetch)
+                let payNums = rs.map { $0.payNum }.reduce(0, +)
+                results.append(payNums)
+            } catch let error as NSError {
+                print("\(error), \(error.userInfo)")
+                results.append(nil)
+            }
+        }
+        return results
+    }
+    
     /// 删除某个刷卡时间的所有刷卡记录
     class func delete(payDate: String) -> Bool {
         guard let manageContext = getManagedContext() else {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		410AF02A21B9110E00792A9D /* SettleHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AF02921B9110E00792A9D /* SettleHistoryManager.swift */; };
+		410AF02E21BA082E00792A9D /* SCHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AF02D21BA082E00792A9D /* SCHistoryTableViewCell.swift */; };
+		410AF03C21BA46AA00792A9D /* SCAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AF03B21BA46AA00792A9D /* SCAlert.swift */; };
+		410AF03E21BA4A6400792A9D /* SCEmptyGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AF03D21BA4A6400792A9D /* SCEmptyGuideView.swift */; };
 		413713FC219A59040087E546 /* SCBanks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413713FB219A59040087E546 /* SCBanks.swift */; };
 		41371409219A68360087E546 /* FlushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41371408219A68360087E546 /* FlushViewController.swift */; };
 		4137140C219A69A40087E546 /* FlushGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137140B219A69A40087E546 /* FlushGridView.swift */; };
@@ -45,7 +48,6 @@
 		41A978E621AD365100CAB8A4 /* PHPhotoLibrary_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978E521AD365100CAB8A4 /* PHPhotoLibrary_Ext.swift */; };
 		41A978E821AF7E4A00CAB8A4 /* SCGesturePSWDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978E721AF7E4A00CAB8A4 /* SCGesturePSWDViewController.swift */; };
 		41A978EA21AF808500CAB8A4 /* SCGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978E921AF808500CAB8A4 /* SCGestureView.swift */; };
-		41A978F121AFD27100CAB8A4 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978F021AFD27100CAB8A4 /* GestureManager.swift */; };
 		41A978F421AFF4EC00CAB8A4 /* SCGestureLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978F321AFF4EC00CAB8A4 /* SCGestureLoginViewController.swift */; };
 		41A978F621AFF4F600CAB8A4 /* SCPasswdLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978F521AFF4F600CAB8A4 /* SCPasswdLoginViewController.swift */; };
 		41A978F821AFF4FE00CAB8A4 /* SCRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978F721AFF4FE00CAB8A4 /* SCRegisterViewController.swift */; };
@@ -111,6 +113,11 @@
 		204DEED513FEF778E7748C59 /* Pods_SmartCardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E244492EACA87A06BDF0AC /* Pods_SmartCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410AF02921B9110E00792A9D /* SettleHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleHistoryManager.swift; sourceTree = "<group>"; };
+		410AF02D21BA082E00792A9D /* SCHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		410AF03721BA159B00792A9D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/User/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		410AF03821BA159B00792A9D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "/Users/archerlj/Desktop/MyProjects/SmartCard/SmartCard/DataBase/User/User+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		410AF03B21BA46AA00792A9D /* SCAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCAlert.swift; sourceTree = "<group>"; };
+		410AF03D21BA4A6400792A9D /* SCEmptyGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCEmptyGuideView.swift; sourceTree = "<group>"; };
 		413713FB219A59040087E546 /* SCBanks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBanks.swift; sourceTree = "<group>"; };
 		41371408219A68360087E546 /* FlushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushViewController.swift; sourceTree = "<group>"; };
 		4137140B219A69A40087E546 /* FlushGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushGridView.swift; sourceTree = "<group>"; };
@@ -150,16 +157,11 @@
 		41A978E521AD365100CAB8A4 /* PHPhotoLibrary_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPhotoLibrary_Ext.swift; sourceTree = "<group>"; };
 		41A978E721AF7E4A00CAB8A4 /* SCGesturePSWDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCGesturePSWDViewController.swift; sourceTree = "<group>"; };
 		41A978E921AF808500CAB8A4 /* SCGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCGestureView.swift; sourceTree = "<group>"; };
-		41A978EC21AFD25F00CAB8A4 /* Gesture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gesture+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		41A978ED21AFD25F00CAB8A4 /* Gesture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gesture+CoreDataClass.swift"; sourceTree = "<group>"; };
-		41A978F021AFD27100CAB8A4 /* GestureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureManager.swift; sourceTree = "<group>"; };
 		41A978F321AFF4EC00CAB8A4 /* SCGestureLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCGestureLoginViewController.swift; sourceTree = "<group>"; };
 		41A978F521AFF4F600CAB8A4 /* SCPasswdLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPasswdLoginViewController.swift; sourceTree = "<group>"; };
 		41A978F721AFF4FE00CAB8A4 /* SCRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCRegisterViewController.swift; sourceTree = "<group>"; };
 		41A978F921AFF50F00CAB8A4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		41A978FD21B002B800CAB8A4 /* SCTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCTimer.swift; sourceTree = "<group>"; };
-		41A9790021B0C7FD00CAB8A4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		41A9790121B0C7FE00CAB8A4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		41A9790421B0C88900CAB8A4 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		41A9790621B0D75A00CAB8A4 /* SmartCard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartCard-Bridging-Header.h"; sourceTree = "<group>"; };
 		41A9790F21B112E100CAB8A4 /* SCCreditCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCreditCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -244,6 +246,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410AF02B21BA081100792A9D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				410AF02D21BA082E00792A9D /* SCHistoryTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		410AF02C21BA081600792A9D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4140DC3F21A2B43000494F98 /* SCHistoryViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		413713FD219A60900087E546 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +305,8 @@
 				4140DC4B21A2B75100494F98 /* CommonMethods.swift */,
 				41A978FD21B002B800CAB8A4 /* SCTimer.swift */,
 				41E5B0D321B8BF4B000F1AEC /* SCNotificationName.swift */,
+				410AF03B21BA46AA00792A9D /* SCAlert.swift */,
+				410AF03D21BA4A6400792A9D /* SCEmptyGuideView.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -382,7 +402,8 @@
 		4140DC3921A2B38B00494F98 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				4140DC3F21A2B43000494F98 /* SCHistoryViewController.swift */,
+				410AF02C21BA081600792A9D /* controller */,
+				410AF02B21BA081100792A9D /* view */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -426,7 +447,6 @@
 				41E5B0E321B90B68000F1AEC /* SettleHistory */,
 				41E5B0CC21B7613E000F1AEC /* PayRecord */,
 				41A978FF21B0C7E100CAB8A4 /* User */,
-				41A978EB21AFD21600CAB8A4 /* Gesture */,
 				41C2B97F21ABEC6A009E9F25 /* PayPlan */,
 				41C2B97021ABCB02009E9F25 /* SellerConfigure */,
 				41C2B95E21AB8EC8009E9F25 /* PayWayARate */,
@@ -457,16 +477,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		41A978EB21AFD21600CAB8A4 /* Gesture */ = {
-			isa = PBXGroup;
-			children = (
-				41A978ED21AFD25F00CAB8A4 /* Gesture+CoreDataClass.swift */,
-				41A978EC21AFD25F00CAB8A4 /* Gesture+CoreDataProperties.swift */,
-				41A978F021AFD27100CAB8A4 /* GestureManager.swift */,
-			);
-			path = Gesture;
-			sourceTree = "<group>";
-		};
 		41A978FB21AFFA7500CAB8A4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,8 +498,8 @@
 		41A978FF21B0C7E100CAB8A4 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				41A9790021B0C7FD00CAB8A4 /* User+CoreDataClass.swift */,
-				41A9790121B0C7FE00CAB8A4 /* User+CoreDataProperties.swift */,
+				410AF03821BA159B00792A9D /* User+CoreDataClass.swift */,
+				410AF03721BA159B00792A9D /* User+CoreDataProperties.swift */,
 				41A9790421B0C88900CAB8A4 /* UserManager.swift */,
 			);
 			path = User;
@@ -981,7 +991,6 @@
 				41C2B97C21ABD654009E9F25 /* SCNewPlanViewController.swift in Sources */,
 				41E5B0C321B53AD3000F1AEC /* SCSelectSwipBanksViewController.swift in Sources */,
 				4140DC4221A2B43A00494F98 /* SCCreditCardViewController.swift in Sources */,
-				41A978F121AFD27100CAB8A4 /* GestureManager.swift in Sources */,
 				41C2B97A21ABCB5E009E9F25 /* SellerConfigureManager.swift in Sources */,
 				41A9791021B112E100CAB8A4 /* SCCreditCardTableViewCell.swift in Sources */,
 				41371413219AA53E0087E546 /* LogoView.swift in Sources */,
@@ -994,16 +1003,19 @@
 				4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */,
 				413713FC219A59040087E546 /* SCBanks.swift in Sources */,
 				41A978F621AFF4F600CAB8A4 /* SCPasswdLoginViewController.swift in Sources */,
+				410AF03E21BA4A6400792A9D /* SCEmptyGuideView.swift in Sources */,
 				4137140C219A69A40087E546 /* FlushGridView.swift in Sources */,
 				41A978DA21ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift in Sources */,
 				41D6B5C32199699300F60348 /* AppDelegate.swift in Sources */,
 				4140DC5621A3AE3800494F98 /* UIViewController_Ext.swift in Sources */,
 				41C2B96D21ABC708009E9F25 /* SCSellerCellContent.swift in Sources */,
+				410AF03C21BA46AA00792A9D /* SCAlert.swift in Sources */,
 				41D652E221A7DB4B00F14AF3 /* SCCardManageCellContentView.swift in Sources */,
 				41A978E821AF7E4A00CAB8A4 /* SCGesturePSWDViewController.swift in Sources */,
 				41A978EA21AF808500CAB8A4 /* SCGestureView.swift in Sources */,
 				41A978DD21AD161B00CAB8A4 /* SCProfileViewController.swift in Sources */,
 				41D652DE21A7D5C900F14AF3 /* SCRemoveableTableViewCell.swift in Sources */,
+				410AF02E21BA082E00792A9D /* SCHistoryTableViewCell.swift in Sources */,
 				41E5B0C721B650D5000F1AEC /* SCSelectSwipTypeViewController.swift in Sources */,
 				4140DC6021A3F96300494F98 /* SCAddCreditCardViewController.swift in Sources */,
 				41E5B0BF21B52CB8000F1AEC /* SCSwipNowViewController.swift in Sources */,

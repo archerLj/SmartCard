@@ -22,27 +22,34 @@ class SCCreditCardViewController: UITableViewController {
     var cardPayACharges: [[(Float, Float, Float, Float)]] = [] // (lastPays, lastCharges, unSettledPays, unSettledCharges)
     var lastSettleInfo: (Float, Float)! // 上期刷卡量和手续费
     var thisSettleInfo: (Float, Float)! // 本期刷卡量和手续费
+    var footerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "信用卡"
         
+        footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         tableViewSetting()
         navSetting()
         getInitDatas()
         NotificationCenter.default.addObserver(self, selector: #selector(newCardAddedNotification(notification:)), name: SCNotificationName.newCreditCardAdded(), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(payActionNotification(notification:)), name: SCNotificationName.payActionSuccess(), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeCreditCard(notification:)), name: SCNotificationName.removeCreditCard(), object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func payActionNotification(notification: NSNotification) {
+    @objc func removeCreditCard(notification: Notification) {
         reFetchAllDatas()
     }
     
-    @objc func newCardAddedNotification(notification: NSNotification) {
+    @objc func payActionNotification(notification: Notification) {
+        reFetchAllDatas()
+    }
+    
+    @objc func newCardAddedNotification(notification: Notification) {
         reFetchAllDatas()
     }
     
@@ -64,9 +71,14 @@ class SCCreditCardViewController: UITableViewController {
     func getInitDatas() {
 
         guard let cis = CardInfoManager.getAllGroupedByCreditBillDate(), cis.count > 0 else {
-            showErrorHud(title: "获取信用卡信息失败，请到设置里添加信用卡信息")
+            tableView.reloadData()
+            tableView.tableFooterView = footerView
+            SCEmptyGuideView.newOne().show(in: footerView, infoImage: UIImage(named: "noData")!, infoTitle: "您还没有添加信用卡，到设置-信用卡管理里添加几张信用卡体验下吧", subInfoTitle: "多多益善")
             return
         }
+        
+        SCEmptyGuideView.dismiss(from: footerView)
+        tableView.tableFooterView = nil
         
         cardInfos = cis
         for ci in cardInfos {
@@ -92,6 +104,12 @@ class SCCreditCardViewController: UITableViewController {
     /// 结算
     @objc func settlement() {
         
+        if cardInfos.count == 0 {
+            let warning = SCAlert.showWarning(title: "提示", message: "请先到设置-信用卡管理里添加信用卡", cancelBtnTitle: "知道了")
+            self.present(warning, animated: true, completion: nil)
+            return
+        }
+        
         let alertVC = UIAlertController(title: "温馨提示", message: "结算和账单日功能一致，结算后的刷卡记录将计入下一个计算周期，再次确认是否要继续结算?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确定", style: .destructive) { _ in
             let rs = PayRecordManager.settle()
@@ -111,6 +129,13 @@ class SCCreditCardViewController: UITableViewController {
     
     /// 刷卡
     @objc func swipCard() {
+        
+        if cardInfos.count == 0 {
+            let warning = SCAlert.showWarning(title: "提示", message: "请先到设置-信用卡管理里添加信用卡", cancelBtnTitle: "知道了")
+            self.present(warning, animated: true, completion: nil)
+            return
+        }
+        
         if let mainVC = self.navigationController?.parent as? SCMainTabBarViewController {
             navigationController?.delegate = mainVC
             let selectSwipBanks: SCSelectSwipBanksViewController = UIStoryboard.storyboard(storyboard: .Card).initViewController()

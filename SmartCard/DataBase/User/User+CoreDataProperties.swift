@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  
 //
-//  Created by archerLj on 2018/11/30.
+//  Created by archerLj on 2018/12/7.
 //
 //
 
@@ -18,5 +18,8 @@ extension User {
 
     @NSManaged public var account: String?
     @NSManaged public var password: String?
+    /// 手势密码
+    @NSManaged public var gestureSequence: String?
+    @NSManaged public var postrait: NSData?
 
 }

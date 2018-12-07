@@ -29,8 +29,7 @@ class SCGesturePSWDViewController: UIViewController {
         gestureView.resultAction = { result in
             if let gestureSequence = self.gestureSequence {
                 if result == gestureSequence {
-                    // TODO 保存手势
-                    if GestureManager.save(sequence: result) {
+                    if UserManager.saveOrUpdateGesture(gesture: result, userName: AppDelegate.currentUser.value!.account!) {
                         showSuccessHud(title: "设置成功", dismissed: {
                             self.navigationController?.popViewController(animated: true)
                         })

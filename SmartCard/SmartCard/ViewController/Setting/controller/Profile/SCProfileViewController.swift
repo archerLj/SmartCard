@@ -15,12 +15,17 @@ class SCProfileViewController: UITableViewController {
     
     var postrait: UIButton!
     let bag = DisposeBag()
+    var postraitImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "个人资料"
         
         tableViewSetting()
+        if let data = AppDelegate.currentUser.value?.postrait,
+            let image = UIImage(data: data) {
+            postrait.setImage(image, for: .normal)
+        }
     }
     
     func tableViewSetting() {
@@ -75,7 +80,21 @@ class SCProfileViewController: UITableViewController {
     }
     
     @objc func save(sender: UIButton) {
-        
+        if let image = postraitImage {
+            if let imageData = UIImage.pngData(image)() {
+                if UserManager.saveOrUpdatePostrait(data: imageData, userName: AppDelegate.currentUser.value!.account!) {
+                    AppDelegate.currentUser.value?.postrait = imageData
+                    NotificationCenter.default.post(name: SCNotificationName.postaritUpdated(), object: nil)
+                    showSuccessHud(title: "保存成功")
+                } else {
+                    showErrorHud(title: "保存失败")
+                }
+            } else {
+                showErrorHud(title: "图片不合法")
+            }
+        } else {
+            showErrorHud(title: "请选择头像图片")
+        }
     }
     
     func touchIDOn(isOn: Bool) {
@@ -151,8 +170,10 @@ extension SCProfileViewController: UINavigationControllerDelegate, UIImagePicker
         
         if picker.allowsEditing {
             postrait.setImage(info[UIImagePickerController.InfoKey.editedImage] as? UIImage, for: .normal)
+            postraitImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         } else {
             postrait.setImage(info[UIImagePickerController.InfoKey.originalImage] as? UIImage, for: .normal)
+            postraitImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -169,7 +190,8 @@ extension SCProfileViewController {
                 fatalError("Couldn't initial SCProfileTableViewCell1 with identifier Cell1")
             }
             cell.title.text = "昵称"
-            cell.nickName.text = "archeLj"
+            cell.nickName.text = AppDelegate.currentUser.value!.account
+            cell.nickName.isEnabled = false
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 1 {
@@ -193,8 +215,10 @@ extension SCProfileViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let gestureVC: SCGesturePSWDViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
-        self.navigationController?.pushViewController(gestureVC, animated: true)
+        if indexPath.row == 1 {
+            let gestureVC: SCGesturePSWDViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
+            self.navigationController?.pushViewController(gestureVC, animated: true)
+        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

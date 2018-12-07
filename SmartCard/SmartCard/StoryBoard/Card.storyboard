@@ -417,6 +417,12 @@
                                             <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(今日已刷2300)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDp-AK-QuF">
+                                            <rect key="frame" x="164.5" y="30" width="88.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="YRq-YG-V0x">
                                             <rect key="frame" x="340" y="22.5" width="15" height="30"/>
                                             <constraints>
@@ -430,14 +436,17 @@
                                         <constraint firstItem="iGC-fi-OFs" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="ECi-No-fS7"/>
                                         <constraint firstAttribute="trailing" secondItem="YRq-YG-V0x" secondAttribute="trailing" constant="20" id="EkG-FN-RU9"/>
                                         <constraint firstItem="iGC-fi-OFs" firstAttribute="leading" secondItem="dB4-U7-fcL" secondAttribute="trailing" constant="20" id="Vgt-Zx-tKl"/>
+                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="centerY" secondItem="iGC-fi-OFs" secondAttribute="centerY" id="W90-jm-9bs"/>
                                         <constraint firstItem="dB4-U7-fcL" firstAttribute="leading" secondItem="w4V-gb-TbE" secondAttribute="leading" constant="20" id="b5L-ib-o5m"/>
                                         <constraint firstItem="dB4-U7-fcL" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="ika-eN-w0z"/>
+                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="leading" secondItem="iGC-fi-OFs" secondAttribute="trailing" constant="5" id="zJY-Pq-Ioy"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bankIcon" destination="dB4-U7-fcL" id="70m-vl-W0e"/>
                                     <outlet property="bankName" destination="iGC-fi-OFs" id="RoN-eu-0UZ"/>
                                     <outlet property="checkedFlag" destination="YRq-YG-V0x" id="NBp-DQ-Csu"/>
+                                    <outlet property="payNumsOfToday" destination="HDp-AK-QuF" id="raU-TB-REH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

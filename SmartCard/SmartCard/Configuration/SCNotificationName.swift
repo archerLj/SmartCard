@@ -15,6 +15,10 @@ class SCNotificationName {
         return Notification.Name.init("SC_N_newCreditCardAdded")
     }
     
+    class func removeCreditCard() -> Notification.Name {
+        return Notification.Name.init("SC_N_removeCreditCard")
+    }
+    
     /// 本周期结算完成
     class func settleSuccess() -> Notification.Name {
         return Notification.Name.init("SC_N_settleSuccess")
@@ -28,5 +32,10 @@ class SCNotificationName {
     /// 还款
     class func repaymentSuccess() -> Notification.Name {
         return Notification.Name.init("SC_N_payActionSuccess")
+    }
+    
+    /// 设置了新头像
+    class func postaritUpdated() -> Notification.Name {
+        return Notification.Name.init("SC_N_postraitUpdated")
     }
 }

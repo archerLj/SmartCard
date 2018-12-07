@@ -69,7 +69,9 @@ extension SCCardManageViewController: UITableViewDataSource, UITableViewDelegate
                 if cardInfo.cardNumber == ci.cardNumber {
                     let rs = CardInfoManager.remove(cardNumber: cardInfo.cardNumber!)
                     if rs {
+                        NotificationCenter.default.post(name: SCNotificationName.removeCreditCard(), object: nil)
                         self.cardInfos!.remove(at: self.cardInfos!.firstIndex(of: ci)!)
+                        self.cardCount.text = "信用卡(\(self.cardInfos?.count ?? 0))"
                     } else {
                         showErrorHud(title: "删除信用卡失败!")
                     }
