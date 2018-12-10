@@ -234,7 +234,7 @@ class SCAddCreditCardViewController: UIViewController {
                              creditLines: Int32(creditLines)!,
                              repaymentWarningDay: Int16(repaymentWarningDay)!)
         if let rs = rs {
-            NotificationCenter.default.post(name: SCNotificationName.newCreditCardAdded(), object: nil)
+            NotificationCenter.default.post(name: SCNotificationName.creditCardModified(), object: nil)
             showSuccessHud(title: "保存成功")
             doneSubject.onNext(rs)
             doneSubject.onCompleted()

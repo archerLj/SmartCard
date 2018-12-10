@@ -11,7 +11,7 @@ import CoreData
 
 class PayRecordManager {
     
-    class func save(bankIDs: Set<Int>,
+    class func save(cardNums: Set<String>,
                     sellerName: String,
                     payNum: Float,
                     payWay: String,
@@ -23,10 +23,10 @@ class PayRecordManager {
             return false
         }
         let entity = NSEntityDescription.entity(forEntityName: "PayRecord", in: manageContext)!
-        for bankID in bankIDs {
+        for cardNum in cardNums {
             let payRecord = NSManagedObject(entity: entity, insertInto: manageContext) as! PayRecord
             
-            payRecord.bankID = Int16(bankID)
+            payRecord.cardNum = cardNum
             payRecord.charge = charge
             payRecord.payNum = payNum
             payRecord.payWay = payWay
@@ -56,7 +56,7 @@ class PayRecordManager {
         do {
             let results = try manageContext.fetch(fetch)
             if results.count > 0 {
-                return Dictionary(grouping: results, by: { $0.bankID }).map { $1 }
+                return Dictionary(grouping: results, by: { $0.cardNum }).map { $1 }
             } else {
                 return nil
             }
@@ -67,16 +67,16 @@ class PayRecordManager {
     }
     
     /// 获取当天的刷卡量
-    class func getPayNumsOfToday(bankIDs: [Int16]) -> [Float?] {
+    class func getPayNumsOfToday(cardNums: [String]) -> [Float?] {
         guard let manageContext = getManagedContext() else {
-            return [Float?](repeating: nil, count: bankIDs.count)
+            return [Float?](repeating: nil, count: cardNums.count)
         }
         
         let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
         
         var results = [Float?]()
-        for bankID in bankIDs {
-            fetch.predicate = NSPredicate(format: "bankID = \(bankID)")
+        for cardNum in cardNums {
+            fetch.predicate = NSPredicate(format: "cardNum = \(cardNum)")
             do {
                 let rs = try manageContext.fetch(fetch)
                 let payNums = rs.map { $0.payNum }.reduce(0, +)
@@ -132,12 +132,12 @@ class PayRecordManager {
                 rs.settleDate = dateNow
             }
             
-            let bankRecords = Dictionary(grouping: results, by: {$0.bankID}).map{$1}
+            let bankRecords = Dictionary(grouping: results, by: {$0.cardNum}).map{$1}
             for bds in bankRecords {
                 let payNums = bds.map { $0.payNum }.reduce(0, +)
                 let charges = bds.map { $0.charge }.reduce(0, +)
                 let settleHistory = NSManagedObject(entity: entity, insertInto: manageContext) as! SettleHistory
-                settleHistory.bankID = bds[0].bankID
+                settleHistory.cardNum = bds[0].cardNum
                 settleHistory.payNum = payNums
                 settleHistory.charge = charges
                 settleHistory.settleDate = dateNow
@@ -151,13 +151,13 @@ class PayRecordManager {
         }
     }
     
-    class func repayment(bankID: Int16) -> Bool {
+    class func repayment(cardNum: String) -> Bool {
         guard let manageContext = getManagedContext() else {
             return false
         }
         
         let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
-        fetch.predicate = NSPredicate(format: "settleMented = true and repaymented = false and bankID = \(bankID)")
+        fetch.predicate = NSPredicate(format: "settleMented = true and repaymented = false and cardNum = \(cardNum)")
         
         do {
             let results = try manageContext.fetch(fetch)
@@ -172,53 +172,18 @@ class PayRecordManager {
         }
     }
     
-    class func getRecordsNotSettled(bankID: Int16) -> [PayRecord]? {
+    class func getRecordsNotSettled(cardNum: String) -> [PayRecord]? {
         guard let manageContext = getManagedContext() else {
             return nil
         }
         
         let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
-        fetch.predicate = NSPredicate(format: "bankID = %@", bankID)
+        fetch.predicate = NSPredicate(format: "cardNum = %@", cardNum)
         fetch.predicate = NSPredicate(format: "settleMented = false")
         
         do {
             let rs = try manageContext.fetch(fetch)
             return rs.count > 0 ? rs : nil
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-            return nil
-        }
-    }
-    
-//    func regroup<T, U: Hashable>(array: [T], by trans: (T) -> U) -> [[T]] {
-//        var dic = [U: [T]]()
-//        array.forEach {
-//            if dic[trans($0)] == nil {
-//                dic[trans($0)] = [$0]
-//            } else {
-//                dic[trans($0)]!.append($0)
-//            }
-//        }
-//        return dic.map {$1}
-//    }
-    
-    /// 获取今日刷卡记录
-    class func getPayRecodesThisDay() -> [[PayRecord]]? {
-        guard let manageContext = getManagedContext() else {
-            return nil
-        }
-        
-        let formate = DateFormatter()
-        formate.dateFormat = "yyyy-MM-dd"
-        let dateToday = formate.string(from: Date())
-        
-        let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
-        fetch.predicate = NSPredicate(format: "payDate like %@", dateToday + "*")
-        fetch.sortDescriptors = [NSSortDescriptor(key: "bankID", ascending: false)]
-        
-        do {
-            let resuts = try manageContext.fetch(fetch)
-            return Dictionary(grouping: resuts, by: {$0.bankID}).map{$1}
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")
             return nil
@@ -232,18 +197,18 @@ class PayRecordManager {
     
     /// 获取本期刷卡量和手续费
     class func getUnSettlePayNumACharges() -> (payNums: Float, charges: Float) {
-        return getUnsettlePayNumACharges(bankID: nil)
+        return getUnsettlePayNumACharges(cardNum: nil)
     }
     
     /// 获取某张卡本期刷卡量和手续费
-    class func getUnsettlePayNumACharges(bankID: Int16?) -> (payNums: Float, charges: Float) {
+    class func getUnsettlePayNumACharges(cardNum: String?) -> (payNums: Float, charges: Float) {
         guard let manageContext = getManagedContext() else {
             return (0, 0)
         }
         
         let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
-        if let bankID = bankID {
-            fetch.predicate = NSPredicate(format: "settleMented = false and bankID = \(bankID)")
+        if let cardNum = cardNum {
+            fetch.predicate = NSPredicate(format: "settleMented = false and cardNum = \(cardNum)")
         } else {
             fetch.predicate = NSPredicate(format: "settleMented = false")
         }
@@ -260,24 +225,25 @@ class PayRecordManager {
     }
     
     /// 获取某张卡上期未还款刷卡量和手续费
-    class func getLastSettlePayNumACharges(bankID: Int16) -> (payNums: Float, charges: Float) {
-        guard let manageContext = getManagedContext() else {
-            return (0, 0)
-        }
-        
-        let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
-        fetch.predicate = NSPredicate(format: "settleMented = true and repaymented = false and bankID = \(bankID)")
-        
-        do {
-            let results = try manageContext.fetch(fetch)
-            let payNums = results.map { $0.payNum }.reduce(0, +)
-            let charges = results.map { $0.charge }.reduce(0, +)
-            return (payNums, charges)
-            
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-            return (0, 0)
-        }
+    class func getLastSettlePayNumACharges(cardNum: String) -> (payNums: Float, charges: Float) {
+        return SettleHistoryManager.getLastSettlePayNumsAndCharges(cardNum:cardNum)
+//        guard let manageContext = getManagedContext() else {
+//            return (0, 0)
+//        }
+//
+//        let fetch: NSFetchRequest<PayRecord> = PayRecord.fetchRequest()
+//        fetch.predicate = NSPredicate(format: "settleMented = true and repaymented = false and cardNum = \(cardNum)")
+//
+//        do {
+//            let results = try manageContext.fetch(fetch)
+//            let payNums = results.map { $0.payNum }.reduce(0, +)
+//            let charges = results.map { $0.charge }.reduce(0, +)
+//            return (payNums, charges)
+//
+//        } catch let error as NSError {
+//            print("\(error), \(error.userInfo)")
+//            return (0, 0)
+//        }
     }
     
     /// 获取最近几期所有刷卡记录

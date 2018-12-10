@@ -68,7 +68,7 @@ class SCCardDetailViewController: UIViewController {
     func repayment(sender: UIButton) {
         let alertVC = UIAlertController(title: "温馨提示", message: "请确保上期欠款已全部还清，确定已还清吗？", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确定", style: .destructive) { _ in
-            let rs = PayRecordManager.repayment(bankID: self.cardInfo.bankID)
+            let rs = PayRecordManager.repayment(cardNum: self.cardInfo.cardNumber!)
             if rs {
                 showSuccessHud(title: "还款成功")
                 self.lastSettlePayNum.text = "0"

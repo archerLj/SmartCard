@@ -10,8 +10,8 @@ import UIKit
 
 class SCSettingViewController: UIViewController {
     
+    var headerView: SCSettingTableViewHeader!
     @IBOutlet weak var mainTableView: UITableView!
-    var postrait: UIButton!
     let cellImages = [
         UIImage(named: "card_manage"),
         UIImage(named: "swing_card_plan"),
@@ -22,11 +22,27 @@ class SCSettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "设置"
         
         tableViewHeaderSetting()
         tableViewFooterSetting()
-        NotificationCenter.default.addObserver(self, selector: #selector(postraitUpdated(notification:)), name: SCNotificationName.postaritUpdated(), object: nil)
+        getDatas()
+        NotificationCenter.default.addObserver(self, selector: #selector(postraitUpdated(notification:)), name: SCNotificationName.profileUpdated(), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getDatas), name: SCNotificationName.creditCardModified(), object: nil)
+    }
+    
+    @objc func getDatas() {
+        let (bankNums, cardNums) = CardInfoManager.getBankAndCardNums()
+        headerView.bankNums.text = String(bankNums)
+        headerView.cardNums.text = String(cardNums)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     deinit {
@@ -36,13 +52,15 @@ class SCSettingViewController: UIViewController {
     @objc func postraitUpdated(notification: Notification? = nil) {
         if let postraitData = AppDelegate.currentUser.value?.postrait {
             if let image = UIImage(data: postraitData) {
-                postrait.setImage(image, for: .normal)
+                headerView.postrait.image = image
             }
         }
+        headerView.brefIntroduction.text = AppDelegate.currentUser.value?.brefIntroduction
     }
     
     func tableViewFooterSetting() {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 150.0))
+        footerView.backgroundColor = UIColor.white
         let logoutBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 100.0, height: 50.0))
         
         logoutBtn.setTitle("退出登录", for: .normal)
@@ -73,38 +91,22 @@ class SCSettingViewController: UIViewController {
     }
     
     func tableViewHeaderSetting() {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 250.0))
-        postrait = UIButton(frame: CGRect(x: 0, y: 0, width: 80.0, height: 80.0))
-        postrait.addTarget(self, action: #selector(showProfile(sender:)), for: .touchUpInside)
-        let nickName = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 30.0))
-        nickName.textAlignment = .center
-        nickName.textColor = UIColor(red: 112/255.0, green: 112/255.0, blue: 112/255.0, alpha: 1.0)
-        nickName.font = UIFont.systemFont(ofSize: 14.0)
+
+        guard let hdView = Bundle.main.loadNibNamed("SCSettingTableViewHeader", owner: nil, options: nil)?.last as? SCSettingTableViewHeader else {
+            fatalError("initial SCSettingTableViewHeader from xib failed.")
+        }
         
-        let lineView = UIView(frame: CGRect(x: 0, y: 0, width: 150.0, height: 1.0))
-        lineView.backgroundColor = UIColor(red: 151/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0)
-        headerView.addSubview(postrait)
-        headerView.addSubview(nickName)
-        headerView.addSubview(lineView)
-        
-        postrait.center = CGPoint(x: headerView.center.x, y: headerView.center.y - 20.0)
-        nickName.frame.origin.y = postrait.frame.maxY + 10.0
-        lineView.center = CGPoint(x: headerView.center.x, y: nickName.frame.maxY + 10.0)
-        
-        postrait.setImage(UIImage(named: "take_photo"), for: .normal)
-        postrait.layer.cornerRadius = postrait.bounds.height / 2.0
-        postrait.clipsToBounds = true
-        
-        nickName.text = "ArcherLj"
-        
+        headerView = hdView
+        headerView.brefIntroduction.text = AppDelegate.currentUser.value?.brefIntroduction
+        headerView.nickName.text = AppDelegate.currentUser.value?.account
+        headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 400.0)
+        headerView.postraitBtnAction = {
+            let profileVC: SCProfileViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }
         self.mainTableView.tableHeaderView = headerView
         
         postraitUpdated()
-    }
-    
-    @objc func showProfile(sender: UIButton) {
-        let profileVC: SCProfileViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
-        self.navigationController?.pushViewController(profileVC, animated: true)
     }
 }
 

@@ -31,6 +31,11 @@ class SCCardManageViewController: UIViewController {
         HUD.hide()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     @IBAction func addNewCard(_ sender: UIButton) {
         let addCreditCardVC: SCAddCreditCardViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
         _ = addCreditCardVC.done.subscribe(onNext: { cardInfo in
@@ -69,7 +74,7 @@ extension SCCardManageViewController: UITableViewDataSource, UITableViewDelegate
                 if cardInfo.cardNumber == ci.cardNumber {
                     let rs = CardInfoManager.remove(cardNumber: cardInfo.cardNumber!)
                     if rs {
-                        NotificationCenter.default.post(name: SCNotificationName.removeCreditCard(), object: nil)
+                        NotificationCenter.default.post(name: SCNotificationName.creditCardModified(), object: nil)
                         self.cardInfos!.remove(at: self.cardInfos!.firstIndex(of: ci)!)
                         self.cardCount.text = "信用卡(\(self.cardInfos?.count ?? 0))"
                     } else {

@@ -18,7 +18,7 @@ class SCSwipNowViewController: UIViewController {
     @IBOutlet weak var payNum: UITextField!
     @IBOutlet weak var payType: UIButton!
     @IBOutlet weak var payCharge: UILabel!
-    var selectedBankIDs: Set<Int>!
+    var selectedCardNums: Set<String>!
     let bankIconWH: CGFloat = 60.0
     var maskView: UIView!
     var payNumNow = Variable<Int>(0)
@@ -77,19 +77,23 @@ class SCSwipNowViewController: UIViewController {
         let y = iconScrollView.bounds.height > bankIconWH ? (iconScrollView.bounds.height - bankIconWH) / 2 : 0
         
         var startX:CGFloat = 0
-        if iconScrollView.bounds.width > (wh + gap) * CGFloat(selectedBankIDs.count) {
-            startX = (iconScrollView.bounds.width - CGFloat(selectedBankIDs.count) * wh - gap * CGFloat(selectedBankIDs.count - 1)) / 2
+        if iconScrollView.bounds.width > (wh + gap) * CGFloat(selectedCardNums.count) {
+            startX = (iconScrollView.bounds.width - CGFloat(selectedCardNums.count) * wh - gap * CGFloat(selectedCardNums.count - 1)) / 2
         }
-        for index in selectedBankIDs {
-            let bankIcon = SCBank.Icons[index]
-            let iconImgView = UIImageView(frame: CGRect(x: (wh + gap) * i + startX, y: y, width: wh, height: wh))
-            iconImgView.contentMode = .scaleAspectFit
-            iconImgView.image = bankIcon
-            iconScrollView.addSubview(iconImgView)
-            i += 1
+        for cardNum in selectedCardNums {
+            if let index = CardInfoManager.getBankID(cardNum: cardNum) {
+                let bankIcon = SCBank.Icons[index]
+                let iconImgView = UIImageView(frame: CGRect(x: (wh + gap) * i + startX, y: y, width: wh, height: wh))
+                iconImgView.contentMode = .scaleAspectFit
+                iconImgView.image = bankIcon
+                iconScrollView.addSubview(iconImgView)
+                i += 1
+            } else {
+                fatalError("get bank info failed.")
+            }
         }
         
-        iconScrollView.contentSize = CGSize(width: CGFloat(selectedBankIDs.count) * (wh + gap), height: wh)
+        iconScrollView.contentSize = CGSize(width: CGFloat(selectedCardNums.count) * (wh + gap), height: wh)
     }
     
     @IBAction
@@ -101,7 +105,7 @@ class SCSwipNowViewController: UIViewController {
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateStr = format.string(from: Date())
 
-        let rs = PayRecordManager.save(bankIDs: selectedBankIDs, sellerName: bussinessType.text!, payNum: Float(payNum.text!)!, payWay: payType.titleLabel!.text!, charge: Float(payCharge.text!)!, settleMented: false, settleDate: "", payDate: dateStr)
+        let rs = PayRecordManager.save(cardNums: selectedCardNums, sellerName: bussinessType.text!, payNum: Float(payNum.text!)!, payWay: payType.titleLabel!.text!, charge: Float(payCharge.text!)!, settleMented: false, settleDate: "", payDate: dateStr)
 
         HUD.hide()
         if rs {

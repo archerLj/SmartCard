@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,10 +75,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL1-qL-0db">
+                                                    <rect key="frame" x="157" y="25" width="31" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="aCA-cN-0bv" firstAttribute="centerY" secondItem="ulv-jO-jJK" secondAttribute="centerY" id="0Fc-Zx-BIO"/>
+                                                <constraint firstItem="oL1-qL-0db" firstAttribute="leading" secondItem="Qlz-U0-SqR" secondAttribute="trailing" constant="2" id="CrQ-5q-vnB"/>
+                                                <constraint firstItem="oL1-qL-0db" firstAttribute="top" secondItem="JTm-jB-cde" secondAttribute="top" constant="25" id="DZd-jt-7fU"/>
                                                 <constraint firstItem="Qlz-U0-SqR" firstAttribute="top" secondItem="JTm-jB-cde" secondAttribute="top" constant="20" id="Eav-rD-MlZ"/>
                                                 <constraint firstItem="c2s-r2-7pd" firstAttribute="leading" secondItem="Hho-dc-880" secondAttribute="trailing" constant="5" id="MWq-4T-3JS"/>
                                                 <constraint firstItem="c2s-r2-7pd" firstAttribute="centerY" secondItem="Hho-dc-880" secondAttribute="centerY" id="P28-S9-LPn"/>
@@ -103,6 +111,7 @@
                                 <connections>
                                     <outlet property="bankName" destination="Qlz-U0-SqR" id="s7P-Ja-3AQ"/>
                                     <outlet property="bgView" destination="JTm-jB-cde" id="4E1-sr-JGL"/>
+                                    <outlet property="cardNum" destination="oL1-qL-0db" id="myY-sz-gss"/>
                                     <outlet property="creditLayOut" destination="aCA-cN-0bv" id="Dhf-l7-3Bl"/>
                                     <outlet property="creditLines" destination="c2s-r2-7pd" id="MzE-sk-uYK"/>
                                     <outlet property="icon" destination="zpG-xf-FVo" id="Qyt-iI-yfe"/>
@@ -392,16 +401,17 @@
         <scene sceneID="dVQ-yX-52L">
             <objects>
                 <tableViewController storyboardIdentifier="SCSelectSwipBanksViewController" hidesBottomBarWhenPushed="YES" id="4bQ-FE-oVS" customClass="SCSelectSwipBanksViewController" customModule="SmartCard" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Bb-Jl-jAX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Bb-Jl-jAX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" rowHeight="75" id="aDB-16-fMv" customClass="SCSelectSwipBankTableViewCell" customModule="SmartCard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDB-16-fMv" id="w4V-gb-TbE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_gonghang" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-U7-fcL">
@@ -418,7 +428,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(今日已刷2300)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDp-AK-QuF">
-                                            <rect key="frame" x="164.5" y="30" width="88.5" height="14.5"/>
+                                            <rect key="frame" x="211.5" y="30.5" width="88.5" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -430,21 +440,42 @@
                                                 <constraint firstAttribute="width" constant="15" id="aUa-BE-IRF"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3V-Gd-0rZ">
+                                            <rect key="frame" x="15" y="74" width="350" height="1"/>
+                                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="K24-38-Ef0"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(8342)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-jQ-ckf">
+                                            <rect key="frame" x="161.5" y="33" width="40" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="leading" secondItem="Tno-jQ-ckf" secondAttribute="trailing" constant="10" id="4BN-iI-lft"/>
+                                        <constraint firstItem="iGC-fi-OFs" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="9Em-3T-DlF"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z3V-Gd-0rZ" secondAttribute="bottom" id="BbC-3t-X0p"/>
                                         <constraint firstItem="YRq-YG-V0x" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="Dk3-Dg-JZq"/>
                                         <constraint firstItem="iGC-fi-OFs" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="ECi-No-fS7"/>
                                         <constraint firstAttribute="trailing" secondItem="YRq-YG-V0x" secondAttribute="trailing" constant="20" id="EkG-FN-RU9"/>
+                                        <constraint firstItem="Tno-jQ-ckf" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" constant="3" id="Ggn-4L-2Fi"/>
+                                        <constraint firstItem="Z3V-Gd-0rZ" firstAttribute="leading" secondItem="w4V-gb-TbE" secondAttribute="leading" constant="15" id="Ghb-t2-rEd"/>
+                                        <constraint firstItem="Tno-jQ-ckf" firstAttribute="leading" secondItem="iGC-fi-OFs" secondAttribute="trailing" constant="2" id="Lu5-Lq-FKZ"/>
+                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="OlS-DE-qOy"/>
+                                        <constraint firstAttribute="trailing" secondItem="Z3V-Gd-0rZ" secondAttribute="trailing" constant="10" id="PNy-eQ-ehe"/>
                                         <constraint firstItem="iGC-fi-OFs" firstAttribute="leading" secondItem="dB4-U7-fcL" secondAttribute="trailing" constant="20" id="Vgt-Zx-tKl"/>
-                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="centerY" secondItem="iGC-fi-OFs" secondAttribute="centerY" id="W90-jm-9bs"/>
                                         <constraint firstItem="dB4-U7-fcL" firstAttribute="leading" secondItem="w4V-gb-TbE" secondAttribute="leading" constant="20" id="b5L-ib-o5m"/>
                                         <constraint firstItem="dB4-U7-fcL" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="ika-eN-w0z"/>
-                                        <constraint firstItem="HDp-AK-QuF" firstAttribute="leading" secondItem="iGC-fi-OFs" secondAttribute="trailing" constant="5" id="zJY-Pq-Ioy"/>
+                                        <constraint firstItem="iGC-fi-OFs" firstAttribute="centerY" secondItem="w4V-gb-TbE" secondAttribute="centerY" id="y0R-TW-MTP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bankIcon" destination="dB4-U7-fcL" id="70m-vl-W0e"/>
                                     <outlet property="bankName" destination="iGC-fi-OFs" id="RoN-eu-0UZ"/>
+                                    <outlet property="cardNum" destination="Tno-jQ-ckf" id="hlF-cV-CRg"/>
                                     <outlet property="checkedFlag" destination="YRq-YG-V0x" id="NBp-DQ-Csu"/>
                                     <outlet property="payNumsOfToday" destination="HDp-AK-QuF" id="raU-TB-REH"/>
                                 </connections>

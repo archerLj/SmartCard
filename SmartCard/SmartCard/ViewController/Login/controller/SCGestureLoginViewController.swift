@@ -83,7 +83,6 @@ class SCGestureLoginViewController: UIViewController {
     @IBAction
     func passwordLogin(sender: UIButton) {
         let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
-        let navVC = UINavigationController(rootViewController: passwordLoginVC)
-        self.present(navVC, animated: true, completion: nil)
+        self.present(passwordLoginVC, animated: true, completion: nil)
     }
 }

@@ -46,8 +46,7 @@ class FlushViewController: UIViewController {
         } else {
             let passwordLoginVC: SCPasswdLoginViewController = UIStoryboard.storyboard(storyboard: .Login).initViewController()
             passwordLoginVC.userInfo = user
-            let navVC = UINavigationController(rootViewController: passwordLoginVC)
-            UIApplication.shared.keyWindow?.rootViewController = navVC
+            UIApplication.shared.keyWindow?.rootViewController = passwordLoginVC
         }
     }
 }

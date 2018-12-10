@@ -11,13 +11,13 @@ import UIKit
 class SCSelectSwipBanksViewController: UITableViewController {
 
     var checkedArr = [Bool]()
-    var selected = Set<Int>()
+    var selected = Set<String>()
     var myBanks = [CardInfo]()
     var payNumsToday = [Float?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "选择银行"
+        self.title = "选择银行卡"
         
         navSetting()
         getData()
@@ -38,8 +38,8 @@ class SCSelectSwipBanksViewController: UITableViewController {
     }
     
     @objc func getPayNums(notification: Notification? = nil) {
-        let bankIDs = myBanks.map { $0.bankID }
-        payNumsToday = PayRecordManager.getPayNumsOfToday(bankIDs: bankIDs)
+        let cardNums = myBanks.map { $0.cardNumber! }
+        payNumsToday = PayRecordManager.getPayNumsOfToday(cardNums: cardNums)
         tableView.reloadData()
     }
     
@@ -52,12 +52,12 @@ class SCSelectSwipBanksViewController: UITableViewController {
     @objc func finishSelect(sender: UIBarButtonItem) {
         
         if selected.count == 0 {
-            showErrorHud(title: "请选择刷卡银行")
+            showErrorHud(title: "请选择银行卡")
             return
         }
         
         let swipNowVC: SCSwipNowViewController = UIStoryboard.storyboard(storyboard: .Card).initViewController()
-        swipNowVC.selectedBankIDs = selected
+        swipNowVC.selectedCardNums = selected
         self.navigationController?.pushViewController(swipNowVC, animated: true)
     }
     
@@ -72,7 +72,7 @@ class SCSelectSwipBanksViewController: UITableViewController {
         
         let cardInfo = myBanks[indexPath.row]
         let payNum = payNumsToday[indexPath.row]
-        cell.configure(bankIndex: cardInfo.bankID, checked: checkedArr[indexPath.row], payNumsOfToday: payNum)
+        cell.configure(bankIndex: cardInfo.bankID, checked: checkedArr[indexPath.row], payNumsOfToday: payNum, cardNum: cardInfo.cardNumber!)
         cell.selectionStyle = .none
         return cell
     }
@@ -81,9 +81,9 @@ class SCSelectSwipBanksViewController: UITableViewController {
         let cardInfo = myBanks[indexPath.row]
         checkedArr[indexPath.row] = !checkedArr[indexPath.row]
         if checkedArr[indexPath.row] {
-            selected.insert(Int(cardInfo.bankID))
+            selected.insert(cardInfo.cardNumber!)
         } else {
-            selected.remove(Int(cardInfo.bankID))
+            selected.remove(cardInfo.cardNumber!)
         }
         tableView.reloadData()
     }

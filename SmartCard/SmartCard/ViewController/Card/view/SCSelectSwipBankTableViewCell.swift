@@ -12,6 +12,7 @@ class SCSelectSwipBankTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bankIcon: UIImageView!
     @IBOutlet weak var bankName: UILabel!
+    @IBOutlet weak var cardNum: UILabel!
     @IBOutlet weak var payNumsOfToday: UILabel!
     @IBOutlet weak var checkedFlag: UIImageView!
     var textOriginalColor: UIColor!
@@ -22,11 +23,12 @@ class SCSelectSwipBankTableViewCell: UITableViewCell {
         textOriginalColor = payNumsOfToday.textColor
     }
     
-    func configure(bankIndex: Int16, checked: Bool, payNumsOfToday: Float?) {
+    func configure(bankIndex: Int16, checked: Bool, payNumsOfToday: Float?, cardNum: String) {
         let index = Int(bankIndex)
         self.bankName.text = SCBank.Names[index]
         self.bankIcon.image = SCBank.Icons[index]
         checkedFlag.isHidden = !checked
+        self.cardNum.text = "(\(cardNum.dropFirst(cardNum.count - 4)))"
         
         if let num = payNumsOfToday {
             self.payNumsOfToday.textColor = textOriginalColor

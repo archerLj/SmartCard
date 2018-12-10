@@ -23,6 +23,11 @@ class SCPayPlanTableViewController: UITableViewController {
         getAllPayPlans()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func getAllPayPlans() {
         if let rs = PayPlanManager.getAll() {
             payPlans.append(contentsOf: rs)

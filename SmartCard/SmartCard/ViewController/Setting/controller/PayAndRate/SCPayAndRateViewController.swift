@@ -29,6 +29,11 @@ class SCPayAndRateViewController: UIViewController {
         getAllPayARate()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

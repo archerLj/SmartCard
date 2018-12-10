@@ -73,30 +73,17 @@ extension SCHistoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50.0))
-        view.backgroundColor = UIColor.init(white: 0.98, alpha: 1.0)
-        
+        let view = Bundle.main.loadNibNamed("SCHistorySectionView", owner: nil, options: nil)?.last as! SCHistorySectionView
         let payRecord = payRecords[section][0]
-        let index = Int(payRecord.bankID)
-        
-        let icon = UIImageView(frame: CGRect(x: 15, y: 10, width: 30, height: 30))
-        icon.contentMode = .scaleAspectFit
-        icon.image = SCBank.Icons[index]
-        
-        let bankName = UILabel(frame: CGRect(x: icon.frame.maxX + 20, y: 0, width: 150.0, height: view.bounds.height))
-        bankName.textColor = UIColor(red: 155/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0)
-        bankName.text = SCBank.Names[index]
-        
-        let payNumsLabel = UILabel(frame: CGRect(x: bankName.frame.maxX, y: 0, width: view.bounds.width - bankName.frame.maxX, height: view.bounds.height))
-        payNumsLabel.font = UIFont.systemFont(ofSize: 14.0)
-        payNumsLabel.textAlignment = .left
-        payNumsLabel.textColor = UIColor(red: 155/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0)
-        let payNums = payRecords[section].map { $0.payNum }.reduce(0, +)
-        payNumsLabel.text = "已刷\(String(payNums).getFormatNumber())元"
-        
-        view.addSubview(icon)
-        view.addSubview(bankName)
-        view.addSubview(payNumsLabel)
+        if let index = CardInfoManager.getBankID(cardNum: payRecord.cardNum!) {
+            view.bankIcon.image = SCBank.Icons[index]
+            view.bankName.text = SCBank.Names[index]
+            view.cardNum.text = "(\(payRecord.cardNum!.dropFirst(payRecord.cardNum!.count - 4)))"
+            let payNums = payRecords[section].map { $0.payNum }.reduce(0, +)
+            view.payNums.text = "已刷\(payNums)元"
+        } else {
+            fatalError("获取银行信息失败，请重试")
+        }
         return view
     }
     

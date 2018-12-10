@@ -40,6 +40,11 @@
 		4140DCBF21A6504100494F98 /* SCDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCBE21A6504100494F98 /* SCDayTableViewController.swift */; };
 		4140DCCD21A6823600494F98 /* UITextField_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCCC21A6823600494F98 /* UITextField_Ext.swift */; };
 		4140DCD121A68AFD00494F98 /* CardInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4140DCD021A68AFD00494F98 /* CardInfoManager.swift */; };
+		4145262D21BE31BC00B342E1 /* SCSettingTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4145262C21BE31BC00B342E1 /* SCSettingTableViewHeader.xib */; };
+		4145262F21BE37FE00B342E1 /* SCSettingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145262E21BE37FE00B342E1 /* SCSettingTableViewHeader.swift */; };
+		4145263121BE490B00B342E1 /* SCProfileTableViewCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145263021BE490B00B342E1 /* SCProfileTableViewCell4.swift */; };
+		4145263321BE644100B342E1 /* SCHistorySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4145263221BE644100B342E1 /* SCHistorySectionView.swift */; };
+		4145263521BE644B00B342E1 /* SCHistorySectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4145263421BE644B00B342E1 /* SCHistorySectionView.xib */; };
 		41A978DA21ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978D921ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift */; };
 		41A978DD21AD161B00CAB8A4 /* SCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978DC21AD161B00CAB8A4 /* SCProfileViewController.swift */; };
 		41A978E021AD1F7700CAB8A4 /* SCProfileTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A978DF21AD1F7700CAB8A4 /* SCProfileTableViewCell1.swift */; };
@@ -149,6 +154,11 @@
 		4140DCC921A680E600494F98 /* CardInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4140DCCC21A6823600494F98 /* UITextField_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Ext.swift; sourceTree = "<group>"; };
 		4140DCD021A68AFD00494F98 /* CardInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoManager.swift; sourceTree = "<group>"; };
+		4145262C21BE31BC00B342E1 /* SCSettingTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCSettingTableViewHeader.xib; sourceTree = "<group>"; };
+		4145262E21BE37FE00B342E1 /* SCSettingTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSettingTableViewHeader.swift; sourceTree = "<group>"; };
+		4145263021BE490B00B342E1 /* SCProfileTableViewCell4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCProfileTableViewCell4.swift; sourceTree = "<group>"; };
+		4145263221BE644100B342E1 /* SCHistorySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHistorySectionView.swift; sourceTree = "<group>"; };
+		4145263421BE644B00B342E1 /* SCHistorySectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCHistorySectionView.xib; sourceTree = "<group>"; };
 		41A978D921ACD48C00CAB8A4 /* SCPayPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCPayPlanTableViewCell.swift; sourceTree = "<group>"; };
 		41A978DC21AD161B00CAB8A4 /* SCProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCProfileViewController.swift; sourceTree = "<group>"; };
 		41A978DF21AD1F7700CAB8A4 /* SCProfileTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCProfileTableViewCell1.swift; sourceTree = "<group>"; };
@@ -250,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				410AF02D21BA082E00792A9D /* SCHistoryTableViewCell.swift */,
+				4145263221BE644100B342E1 /* SCHistorySectionView.swift */,
+				4145263421BE644B00B342E1 /* SCHistorySectionView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -425,6 +437,8 @@
 				41C2B96121AB92A2009E9F25 /* PayAndRate */,
 				41C2B95421AB8396009E9F25 /* CardManage */,
 				4140DC5921A3D2DD00494F98 /* SCSettingTableViewCell.swift */,
+				4145262C21BE31BC00B342E1 /* SCSettingTableViewHeader.xib */,
+				4145262E21BE37FE00B342E1 /* SCSettingTableViewHeader.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -473,6 +487,7 @@
 				41A978E121AD1F8600CAB8A4 /* SCProfileTableViewCell2.swift */,
 				41A978E321AD1F9000CAB8A4 /* SCProfileTableViewCell3.swift */,
 				41A978E921AF808500CAB8A4 /* SCGestureView.swift */,
+				4145263021BE490B00B342E1 /* SCProfileTableViewCell4.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -848,9 +863,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C2B96F21ABC714009E9F25 /* SCSellerCellContent.xib in Resources */,
+				4145263521BE644B00B342E1 /* SCHistorySectionView.xib in Resources */,
 				41D652E021A7D91100F14AF3 /* SCCardManageCellContent.xib in Resources */,
 				4140DC4621A2B55D00494F98 /* Card.storyboard in Resources */,
 				41C2B96521AB92CA009E9F25 /* SCPayARateCellContent.xib in Resources */,
+				4145262D21BE31BC00B342E1 /* SCSettingTableViewHeader.xib in Resources */,
 				41D6B5D02199699500F60348 /* LaunchScreen.storyboard in Resources */,
 				41E5B0D821B8C3B1000F1AEC /* SCCreditCardTopView.xib in Resources */,
 				4140DC4821A2B56400494F98 /* History.storyboard in Resources */,
@@ -964,6 +981,7 @@
 			files = (
 				4140DC6821A5329000494F98 /* SCSelectBankViewController.swift in Sources */,
 				4140DC5A21A3D2DD00494F98 /* SCSettingTableViewCell.swift in Sources */,
+				4145263321BE644100B342E1 /* SCHistorySectionView.swift in Sources */,
 				4140DC5C21A3D43200494F98 /* String_Ext.swift in Sources */,
 				41E5B0D421B8BF4B000F1AEC /* SCNotificationName.swift in Sources */,
 				4140DC5421A3A7EE00494F98 /* StoryboardIdentifiable.swift in Sources */,
@@ -1024,6 +1042,8 @@
 				41371409219A68360087E546 /* FlushViewController.swift in Sources */,
 				41C2B96321AB92BF009E9F25 /* SCPayARateCellContent.swift in Sources */,
 				41371411219AA2BC0087E546 /* Constants.swift in Sources */,
+				4145263121BE490B00B342E1 /* SCProfileTableViewCell4.swift in Sources */,
+				4145262F21BE37FE00B342E1 /* SCSettingTableViewHeader.swift in Sources */,
 				41E5B0BD21B4F64C000F1AEC /* SCCreditNavAnimator.swift in Sources */,
 				41A978E221AD1F8600CAB8A4 /* SCProfileTableViewCell2.swift in Sources */,
 				41A978E621AD365100CAB8A4 /* PHPhotoLibrary_Ext.swift in Sources */,

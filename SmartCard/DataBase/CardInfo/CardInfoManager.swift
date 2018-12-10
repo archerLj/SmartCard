@@ -122,4 +122,42 @@ class CardInfoManager {
             return a0.creditBillDate < b0.creditBillDate
         })
     }
+    
+    class func getBankAndCardNums() -> (bankNums: Int, cardNums: Int) {
+        guard let manageContext = getManagedContext() else {
+            return (0, 0)
+        }
+        
+        let fetch: NSFetchRequest<CardInfo> = CardInfo.fetchRequest()
+        
+        do {
+            let results = try manageContext.fetch(fetch)
+            if results.count > 0 {
+                let grouped = Dictionary(grouping: results, by: { $0.bankID }).map {$1}
+                return (grouped.count, results.count)
+            }
+            return (0, 0)
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return (0, 0)
+        }
+    }
+    
+    class func getBankID(cardNum: String) -> Int? {
+        guard let manageContext = getManagedContext() else { return nil }
+        
+        let fetch: NSFetchRequest<CardInfo> = CardInfo.fetchRequest()
+        fetch.predicate = NSPredicate(format: "cardNumber = %@", cardNum)
+        
+        do {
+            let results = try manageContext.fetch(fetch)
+            if results.count > 0 {
+                return Int(results[0].bankID)
+            }
+            return nil
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return nil
+        }
+    }
 }

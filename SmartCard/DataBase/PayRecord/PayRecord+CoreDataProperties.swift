@@ -16,7 +16,7 @@ extension PayRecord {
         return NSFetchRequest<PayRecord>(entityName: "PayRecord")
     }
 
-    @NSManaged public var bankID: Int16
+    @NSManaged public var cardNum: String
     @NSManaged public var sellerName: String?
     @NSManaged public var payNum: Float
     @NSManaged public var payWay: String?

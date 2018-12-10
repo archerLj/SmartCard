@@ -38,11 +38,6 @@ class SCRegisterViewController: UIViewController {
         accountSubject.onCompleted()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     @IBAction
     func register(sender: UIButton) {
         guard let account = account.text, !account.isEmpty else {
@@ -66,7 +61,7 @@ class SCRegisterViewController: UIViewController {
             accountSubject.onNext(account)
             accountSubject.onCompleted()
             showSuccessHud(title: "注册成功") {
-                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             }
         } else {
             showErrorHud(title: "注册失败，请重试")

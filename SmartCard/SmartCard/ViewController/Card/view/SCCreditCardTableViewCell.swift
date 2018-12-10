@@ -18,6 +18,7 @@ class SCCreditCardTableViewCell: UITableViewCell {
     @IBOutlet weak var creditLines: UILabel!
     /// 已刷额度
     @IBOutlet weak var creditLayOut: UILabel!
+    @IBOutlet weak var cardNum: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,5 +40,6 @@ class SCCreditCardTableViewCell: UITableViewCell {
         bgView.backgroundColor = SCBank.Colors[index]
         creditLines.text = String(cardInfo.creditLines).getFormatNumber()
         creditLayOut.text = String(cardPayACharges.unSettledPayNum).getFormatNumber()
+        cardNum.text = "(\(cardInfo.cardNumber!.dropFirst(cardInfo.cardNumber!.count - 4)))"
     }
 }

@@ -16,16 +16,23 @@ class SCProfileViewController: UITableViewController {
     var postrait: UIButton!
     let bag = DisposeBag()
     var postraitImage: UIImage?
+    var brefIntroduction: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "个人资料"
         
+        adapteKeyboard = true
         tableViewSetting()
         if let data = AppDelegate.currentUser.value?.postrait,
             let image = UIImage(data: data) {
             postrait.setImage(image, for: .normal)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func tableViewSetting() {
@@ -80,20 +87,20 @@ class SCProfileViewController: UITableViewController {
     }
     
     @objc func save(sender: UIButton) {
+        
+        var imageData: Data?
         if let image = postraitImage {
-            if let imageData = UIImage.pngData(image)() {
-                if UserManager.saveOrUpdatePostrait(data: imageData, userName: AppDelegate.currentUser.value!.account!) {
-                    AppDelegate.currentUser.value?.postrait = imageData
-                    NotificationCenter.default.post(name: SCNotificationName.postaritUpdated(), object: nil)
-                    showSuccessHud(title: "保存成功")
-                } else {
-                    showErrorHud(title: "保存失败")
-                }
-            } else {
-                showErrorHud(title: "图片不合法")
-            }
+            imageData = UIImage.pngData(image)()
+        }
+        
+        let rs = UserManager.saveOrUpdateInfos(postrait: imageData, brefIntroduction: brefIntroduction, account: AppDelegate.currentUser.value!.account!)
+        if rs {
+            AppDelegate.currentUser.value?.postrait = imageData
+            AppDelegate.currentUser.value?.brefIntroduction = brefIntroduction
+            NotificationCenter.default.post(name: SCNotificationName.profileUpdated(), object: nil)
+            showSuccessHud(title: "保存成功")
         } else {
-            showErrorHud(title: "请选择头像图片")
+            showErrorHud(title: "保存失败")
         }
     }
     
@@ -181,20 +188,30 @@ extension SCProfileViewController: UINavigationControllerDelegate, UIImagePicker
 
 extension SCProfileViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath) as? SCProfileTableViewCell1  else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell4", for: indexPath) as? SCProfileTableViewCell4  else {
                 fatalError("Couldn't initial SCProfileTableViewCell1 with identifier Cell1")
             }
             cell.title.text = "昵称"
             cell.nickName.text = AppDelegate.currentUser.value!.account
-            cell.nickName.isEnabled = false
             cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath) as? SCProfileTableViewCell1 else {
+                fatalError("Couldn't initial SCProfileTableViewCell2 with identifier Cell1")
+            }
+            cell.title.text = "简介"
+            cell.brefIntroduction.text = AppDelegate.currentUser.value?.brefIntroduction
+            cell.brefIntroChanged { bref in
+                self.brefIntroduction = bref
+            }
+            return cell
+            
+        } else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2", for: indexPath) as? SCProfileTableViewCell2 else {
                 fatalError("Couldn't initial SCProfileTableViewCell2 with identifier Cell2")
             }
@@ -215,13 +232,13 @@ extension SCProfileViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             let gestureVC: SCGesturePSWDViewController = UIStoryboard.storyboard(storyboard: .Setting).initViewController()
             self.navigationController?.pushViewController(gestureVC, animated: true)
         }
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollView.endEditing(true)
     }
 }

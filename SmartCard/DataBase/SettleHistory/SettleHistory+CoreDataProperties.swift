@@ -16,7 +16,7 @@ extension SettleHistory {
         return NSFetchRequest<SettleHistory>(entityName: "SettleHistory")
     }
 
-    @NSManaged public var bankID: Int16
+    @NSManaged public var cardNum: String
     /// 上一期总刷卡量
     @NSManaged public var payNum: Float
     /// 上一期总手续费

@@ -10,19 +10,22 @@ import Foundation
 import CoreData
 
 class SettleHistoryManager {
-    class func getLastSettlePayNumsAndCharges(bankID: Int16) -> (payNums: Float, charges: Float) {
+    class func getLastSettlePayNumsAndCharges(cardNum: String) -> (payNums: Float, charges: Float) {
         guard let manageContext = getManagedContext() else {
             return (0, 0)
         }
         
         let fetch: NSFetchRequest<SettleHistory> = SettleHistory.fetchRequest()
-        fetch.predicate = NSPredicate(format: "bankID = \(bankID)")
+        fetch.predicate = NSPredicate(format: "cardNum = \(cardNum)")
         fetch.fetchLimit = 1
         fetch.sortDescriptors = [NSSortDescriptor(key: "settleDate", ascending: true)]
         
         do {
             let results = try manageContext.fetch(fetch)
-            return (results[0].payNum, results[0].charge)
+            if results.count > 0 {
+                return (results[0].payNum, results[0].charge)
+            }
+            return (0, 0)
         } catch let error as NSError {
             print("\(error), \(error.userInfo)")
             return (0, 0)

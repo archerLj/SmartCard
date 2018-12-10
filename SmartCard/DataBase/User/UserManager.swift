@@ -75,16 +75,17 @@ class UserManager {
         }
     }
     
-    class func saveOrUpdatePostrait(data: Data, userName: String) -> Bool {
+    class func saveOrUpdateInfos(postrait: Data?, brefIntroduction: String?, account: String) -> Bool {
         guard let manageContext = getManagedContext() else { return false }
         
         let fetch: NSFetchRequest<User> = User.fetchRequest()
-        fetch.predicate = NSPredicate(format: "account = %@", userName)
+        fetch.predicate = NSPredicate(format: "account = %@", account)
         
         do {
             let results = try manageContext.fetch(fetch)
             if results.count > 0 {
-                results[0].postrait = data
+                results[0].postrait = postrait
+                results[0].brefIntroduction = brefIntroduction
                 try manageContext.save()
                 return true
             } else {
@@ -118,61 +119,4 @@ class UserManager {
             return false
         }
     }
-    //////////////////////////
-//    class func save(sequence: String) -> Bool {
-//        guard let manageContext = getManagedContext() else {
-//            return false
-//        }
-//
-//        if !deleteAll() {
-//            return false
-//        }
-//
-//        let entity = NSEntityDescription.entity(forEntityName: "Gesture", in: manageContext)!
-//        let gesture = NSManagedObject(entity: entity, insertInto: manageContext) as! Gesture
-//
-//        gesture.gestureSequence = sequence
-//        do {
-//            try manageContext.save()
-//            return true
-//        } catch let error as NSError {
-//            print("\(error), \(error.userInfo)")
-//            return false
-//        }
-//    }
-//
-//    class func deleteAll() -> Bool {
-//        guard let manageContext = getManagedContext() else {
-//            return false
-//        }
-//
-//        let fetch: NSFetchRequest<Gesture> = Gesture.fetchRequest()
-//
-//        do {
-//            let resuts = try manageContext.fetch(fetch)
-//            for g in resuts {
-//                manageContext.delete(g)
-//            }
-//            return true
-//        } catch let error as NSError {
-//            print("\(error), \(error.userInfo)")
-//            return false
-//        }
-//    }
-//
-//    class func get() -> String? {
-//        guard let manageContext = getManagedContext() else {
-//            return nil
-//        }
-//
-//        let fetch: NSFetchRequest<Gesture> = Gesture.fetchRequest()
-//
-//        do {
-//            let rs = try manageContext.fetch(fetch)
-//            return rs.first?.gestureSequence
-//        } catch let error as NSError {
-//            print("\(error), \(error.userInfo)")
-//            return nil
-//        }
-//    }
 }

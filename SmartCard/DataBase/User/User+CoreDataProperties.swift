@@ -21,5 +21,6 @@ extension User {
     /// 手势密码
     @NSManaged public var gestureSequence: String?
     @NSManaged public var postrait: NSData?
+    @NSManaged public var brefIntroduction: String?
 
 }

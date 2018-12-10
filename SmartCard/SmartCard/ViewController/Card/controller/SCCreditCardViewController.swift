@@ -32,24 +32,19 @@ class SCCreditCardViewController: UITableViewController {
         tableViewSetting()
         navSetting()
         getInitDatas()
-        NotificationCenter.default.addObserver(self, selector: #selector(newCardAddedNotification(notification:)), name: SCNotificationName.newCreditCardAdded(), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(creditCardModified(notification:)), name: SCNotificationName.creditCardModified(), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(payActionNotification(notification:)), name: SCNotificationName.payActionSuccess(), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(removeCreditCard(notification:)), name: SCNotificationName.removeCreditCard(), object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func removeCreditCard(notification: Notification) {
+    @objc func creditCardModified(notification: Notification) {
         reFetchAllDatas()
     }
     
     @objc func payActionNotification(notification: Notification) {
-        reFetchAllDatas()
-    }
-    
-    @objc func newCardAddedNotification(notification: Notification) {
         reFetchAllDatas()
     }
     
@@ -84,8 +79,8 @@ class SCCreditCardViewController: UITableViewController {
         for ci in cardInfos {
             var ciInfos = [(Float, Float, Float, Float)]()
             for c in ci {
-                let lastSettle = PayRecordManager.getLastSettlePayNumACharges(bankID: c.bankID)
-                let unSettled = PayRecordManager.getUnsettlePayNumACharges(bankID: c.bankID)
+                let lastSettle = PayRecordManager.getLastSettlePayNumACharges(cardNum: c.cardNumber!)
+                let unSettled = PayRecordManager.getUnsettlePayNumACharges(cardNum: c.cardNumber!)
                 ciInfos.append((lastSettle.payNums, lastSettle.charges, unSettled.payNums, unSettled.charges))
             }
             cardPayACharges.append(ciInfos)
