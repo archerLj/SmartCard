@@ -18,9 +18,9 @@ class SCCreditCardTopView: UIView {
                    lastSettleCharge: Float,
                    thisSettlePayNum: Float,
                    thisSettleCharge: Float) {
-        self.lastSettlePayNum.text = "上期刷卡量：\(lastSettlePayNum)"
-        self.lastSettleCharge.text = "(手续费\(lastSettleCharge))"
-        self.thisSettlePayNum.text = "本期刷卡量：\(thisSettlePayNum)"
-        self.thisSettleCharge.text = "(手续费\(thisSettleCharge))"
+        self.lastSettlePayNum.text = "上期刷卡量：\(String(lastSettlePayNum).getFormatNumber())"
+        self.lastSettleCharge.text = "(手续费\(String(lastSettleCharge).getFormatNumber()))"
+        self.thisSettlePayNum.text = "本期刷卡量：\(String(thisSettlePayNum).getFormatNumber())"
+        self.thisSettleCharge.text = "(手续费\(String(thisSettleCharge).getFormatNumber()))"
     }
 }

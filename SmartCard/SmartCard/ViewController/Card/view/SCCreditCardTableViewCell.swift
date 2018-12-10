@@ -37,7 +37,7 @@ class SCCreditCardTableViewCell: UITableViewCell {
         icon.image = SCBank.Icons[index]
         bankName.text = SCBank.Names[index]
         bgView.backgroundColor = SCBank.Colors[index]
-        creditLines.text = String(cardInfo.creditLines)
-        creditLayOut.text = String(cardPayACharges.unSettledPayNum)
+        creditLines.text = String(cardInfo.creditLines).getFormatNumber()
+        creditLayOut.text = String(cardPayACharges.unSettledPayNum).getFormatNumber()
     }
 }

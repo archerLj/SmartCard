@@ -44,12 +44,12 @@ class SCCardDetailViewController: UIViewController {
         self.scrollViewContainer.backgroundColor = SCBank.Colors[index]
         self.creditBillDate.text = "\(cardInfo.creditBillDate)号"
         self.repaymentDate.text = "\(cardInfo.repaymentWarningDay)号"
-        self.lastSettlePayNum.text = "\(cardPayInfos.0)"
-        self.lastSettleCharge.text = "\(cardPayInfos.1)"
-        self.thisSettlePayNum.text = "\(cardPayInfos.2)"
-        self.thisSettleCharge.text = "\(cardPayInfos.3)"
-        self.creditLines.text = "\(cardInfo.creditLines)"
-        self.surplusAmout.text = "\(Float(cardInfo.creditLines) - cardPayInfos.0 - cardPayInfos.2)"
+        self.lastSettlePayNum.text = "\(String(cardPayInfos.0).getFormatNumber())"
+        self.lastSettleCharge.text = "\(String(cardPayInfos.1).getFormatNumber())"
+        self.thisSettlePayNum.text = "\(String(cardPayInfos.2).getFormatNumber())"
+        self.thisSettleCharge.text = "\(String(cardPayInfos.3).getFormatNumber())"
+        self.creditLines.text = "\(String(cardInfo.creditLines).getFormatNumber())"
+        self.surplusAmout.text = "\(String(Float(cardInfo.creditLines) - cardPayInfos.0 - cardPayInfos.2).getFormatNumber())"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +73,7 @@ class SCCardDetailViewController: UIViewController {
                 showSuccessHud(title: "还款成功")
                 self.lastSettlePayNum.text = "0"
                 self.lastSettleCharge.text = "0"
-                self.surplusAmout.text = "\(Float(self.cardInfo.creditLines) - self.cardPayInfos.2)"
+                self.surplusAmout.text = "\(String(Float(self.cardInfo.creditLines) - self.cardPayInfos.2).getFormatNumber())"
             } else {
                 showErrorHud(title: "还款失败，请退出重试")
             }

@@ -27,7 +27,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="archerLj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7m-OC-oLC">
                                 <rect key="frame" x="0.0" y="145" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入手势密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPf-MI-LTP">
@@ -126,7 +126,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6i-ad-QV4">
                                 <rect key="frame" x="30" y="323" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.48627450980392156" green="0.4823529411764706" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-o4-wdb" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
@@ -143,7 +143,7 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6P-5S-jH4">
                                 <rect key="frame" x="30" y="353" width="330" height="1"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="2in-nf-JFU"/>
                                 </constraints>
@@ -151,7 +151,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuC-tS-AAU">
                                 <rect key="frame" x="30" y="242.5" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.48627450980392156" green="0.4823529411764706" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z0s-dE-Xik" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
@@ -168,7 +168,7 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-LU-DVe">
                                 <rect key="frame" x="30" y="272.5" width="330" height="1"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="hhU-DH-B6K"/>
                                 </constraints>
@@ -179,7 +179,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GuN-LA-Jop"/>
                                 </constraints>
-                                <state key="normal" title="登录">
+                                <state key="normal" title="登录Smart Card">
                                     <color key="titleColor" red="0.75686274509803919" green="0.73333333333333328" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -242,13 +242,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wn-LF-xgi">
-                                <rect key="frame" x="30" y="70" width="52" height="21"/>
+                                <rect key="frame" x="30" y="208" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.48627450980392156" green="0.4823529411764706" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-Ud-J9F" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
-                                <rect key="frame" x="87" y="60.5" width="273" height="40"/>
+                                <rect key="frame" x="87" y="198.5" width="273" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AAK-CM-ysU"/>
                                 </constraints>
@@ -260,20 +260,20 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qoj-ds-mbb">
-                                <rect key="frame" x="30" y="101.5" width="330" height="1"/>
+                                <rect key="frame" x="30" y="239.5" width="330" height="1"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="9go-S3-W2p"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkX-dr-533">
-                                <rect key="frame" x="30" y="132.5" width="52" height="21"/>
+                                <rect key="frame" x="30" y="270.5" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.48627450980392156" green="0.4823529411764706" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-gC-RNN" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
-                                <rect key="frame" x="87" y="123" width="273" height="40"/>
+                                <rect key="frame" x="87" y="261" width="273" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="n5l-Tu-tgH"/>
                                 </constraints>
@@ -285,20 +285,20 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiV-se-vPY">
-                                <rect key="frame" x="30" y="164" width="330" height="1"/>
+                                <rect key="frame" x="30" y="302" width="330" height="1"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="knK-za-usX"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码(确认)：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zae-J1-fY6">
-                                <rect key="frame" x="30" y="195" width="99" height="21"/>
+                                <rect key="frame" x="30" y="333" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.48627450980392156" green="0.4823529411764706" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ltQ-5v-lcl" customClass="SCTextField" customModule="SmartCard" customModuleProvider="target">
-                                <rect key="frame" x="134" y="185.5" width="226" height="40"/>
+                                <rect key="frame" x="134" y="323.5" width="226" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fr5-qL-qmC"/>
                                 </constraints>
@@ -310,14 +310,14 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh7-XE-n9w">
-                                <rect key="frame" x="30" y="226.5" width="330" height="1"/>
+                                <rect key="frame" x="30" y="364.5" width="330" height="1"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="IvB-7W-7wj"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54z-JM-KFQ">
-                                <rect key="frame" x="30" y="277.5" width="315" height="40"/>
+                                <rect key="frame" x="30" y="415.5" width="315" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bGh-Wa-T0E"/>
@@ -329,15 +329,27 @@
                                     <action selector="registerWithSender:" destination="APG-U0-zxk" eventType="touchUpInside" id="DHm-9H-O7P"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSb-34-4KY">
+                                <rect key="frame" x="20" y="70" width="65" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来到 Smart Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8W-BQ-s6w">
+                                <rect key="frame" x="20" y="119" width="240.5" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="WSb-34-4KY" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="20" id="1eK-es-saS"/>
                             <constraint firstItem="f3g-gC-RNN" firstAttribute="leading" secondItem="dkX-dr-533" secondAttribute="trailing" constant="5" id="5L1-EN-Tda"/>
                             <constraint firstItem="Cui-Ud-J9F" firstAttribute="leading" secondItem="4Wn-LF-xgi" secondAttribute="trailing" constant="5" id="5Yi-gA-EdG"/>
                             <constraint firstItem="sh7-XE-n9w" firstAttribute="top" secondItem="ltQ-5v-lcl" secondAttribute="bottom" constant="1" id="5jL-nv-MdW"/>
                             <constraint firstItem="AiV-se-vPY" firstAttribute="leading" secondItem="1rq-l4-E8A" secondAttribute="leading" constant="30" id="BVR-VO-zCf"/>
                             <constraint firstItem="AiV-se-vPY" firstAttribute="top" secondItem="f3g-gC-RNN" secondAttribute="bottom" constant="1" id="Df1-rQ-81D"/>
-                            <constraint firstItem="4Wn-LF-xgi" firstAttribute="top" secondItem="SgJ-vT-Xlk" secondAttribute="top" constant="50" id="Elv-Ma-TKh"/>
                             <constraint firstItem="Qoj-ds-mbb" firstAttribute="leading" secondItem="1rq-l4-E8A" secondAttribute="leading" constant="30" id="Gp6-mO-bnP"/>
                             <constraint firstItem="54z-JM-KFQ" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="30" id="KY6-fl-dqj"/>
                             <constraint firstItem="dkX-dr-533" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="30" id="LGn-eh-2cw"/>
@@ -350,15 +362,19 @@
                             <constraint firstItem="54z-JM-KFQ" firstAttribute="top" secondItem="sh7-XE-n9w" secondAttribute="bottom" constant="50" id="RmQ-RS-8Yr"/>
                             <constraint firstAttribute="trailing" secondItem="sh7-XE-n9w" secondAttribute="trailing" constant="15" id="Ubo-sw-1Ez"/>
                             <constraint firstItem="SgJ-vT-Xlk" firstAttribute="trailing" secondItem="f3g-gC-RNN" secondAttribute="trailing" constant="15" id="V3g-dM-J5x"/>
+                            <constraint firstItem="Z8W-BQ-s6w" firstAttribute="top" secondItem="WSb-34-4KY" secondAttribute="bottom" constant="10" id="ZjZ-Ck-XDn"/>
                             <constraint firstItem="f3g-gC-RNN" firstAttribute="centerY" secondItem="dkX-dr-533" secondAttribute="centerY" id="eIr-vy-vK7"/>
                             <constraint firstItem="zae-J1-fY6" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="30" id="gaS-lg-UUC"/>
                             <constraint firstItem="SgJ-vT-Xlk" firstAttribute="trailing" secondItem="54z-JM-KFQ" secondAttribute="trailing" constant="30" id="jDU-DJ-2dq"/>
+                            <constraint firstItem="4Wn-LF-xgi" firstAttribute="top" secondItem="Z8W-BQ-s6w" secondAttribute="bottom" constant="50" id="l4G-XL-cAn"/>
                             <constraint firstItem="dkX-dr-533" firstAttribute="top" secondItem="Qoj-ds-mbb" secondAttribute="bottom" constant="30" id="mGv-0X-fn5"/>
                             <constraint firstAttribute="trailing" secondItem="Qoj-ds-mbb" secondAttribute="trailing" constant="15" id="o6X-wx-IKS"/>
                             <constraint firstItem="zae-J1-fY6" firstAttribute="top" secondItem="AiV-se-vPY" secondAttribute="bottom" constant="30" id="pFI-zB-L0o"/>
                             <constraint firstItem="4Wn-LF-xgi" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="30" id="rip-i4-rLf"/>
                             <constraint firstAttribute="trailing" secondItem="AiV-se-vPY" secondAttribute="trailing" constant="15" id="sVR-6x-O7M"/>
                             <constraint firstItem="SgJ-vT-Xlk" firstAttribute="trailing" secondItem="ltQ-5v-lcl" secondAttribute="trailing" constant="15" id="tFW-WG-n91"/>
+                            <constraint firstItem="Z8W-BQ-s6w" firstAttribute="leading" secondItem="SgJ-vT-Xlk" secondAttribute="leading" constant="20" id="y7T-Hj-4cP"/>
+                            <constraint firstItem="WSb-34-4KY" firstAttribute="top" secondItem="SgJ-vT-Xlk" secondAttribute="top" constant="50" id="ysU-NH-lAo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SgJ-vT-Xlk"/>
                     </view>

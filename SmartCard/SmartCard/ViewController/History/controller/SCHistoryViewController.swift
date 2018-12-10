@@ -92,7 +92,7 @@ extension SCHistoryViewController: UITableViewDataSource, UITableViewDelegate {
         payNumsLabel.textAlignment = .left
         payNumsLabel.textColor = UIColor(red: 155/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0)
         let payNums = payRecords[section].map { $0.payNum }.reduce(0, +)
-        payNumsLabel.text = "已刷\(payNums)元"
+        payNumsLabel.text = "已刷\(String(payNums).getFormatNumber())元"
         
         view.addSubview(icon)
         view.addSubview(bankName)

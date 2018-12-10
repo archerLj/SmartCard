@@ -52,7 +52,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已刷：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulv-jO-jJK">
-                                                    <rect key="frame" x="196" y="76.5" width="43" height="17"/>
+                                                    <rect key="frame" x="226" y="76.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCA-cN-0bv">
-                                                    <rect key="frame" x="244" y="76.5" width="43" height="17"/>
+                                                    <rect key="frame" x="274" y="76.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                                 <constraint firstItem="sxH-ZG-cbc" firstAttribute="leading" secondItem="JTm-jB-cde" secondAttribute="leading" constant="15" id="X3h-ie-l9T"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hho-dc-880" secondAttribute="bottom" constant="16.5" id="dlp-IT-20b"/>
                                                 <constraint firstItem="sxH-ZG-cbc" firstAttribute="top" secondItem="JTm-jB-cde" secondAttribute="top" constant="15" id="jh5-Rb-Xk1"/>
-                                                <constraint firstItem="ulv-jO-jJK" firstAttribute="leading" secondItem="Hho-dc-880" secondAttribute="trailing" constant="70" id="ndk-RA-FvP"/>
+                                                <constraint firstItem="ulv-jO-jJK" firstAttribute="leading" secondItem="Hho-dc-880" secondAttribute="trailing" constant="100" id="ndk-RA-FvP"/>
                                                 <constraint firstItem="Qlz-U0-SqR" firstAttribute="leading" secondItem="sxH-ZG-cbc" secondAttribute="trailing" constant="10" id="uDE-GG-beD"/>
                                                 <constraint firstItem="ulv-jO-jJK" firstAttribute="centerY" secondItem="Hho-dc-880" secondAttribute="centerY" id="yN8-Ed-QEN"/>
                                             </constraints>

@@ -33,6 +33,6 @@ class SCNewPlanTableViewCell: UITableViewCell {
             self.sellerName.text = sellerConfigure.sellerName
             self.checkMakrImg.image = nil
         }
-        self.payRange.text = "(" + String(sellerConfigure.minPay) + " ~ " + String(sellerConfigure.maxPay) + ")元"
+        self.payRange.text = "(" + String(sellerConfigure.minPay).getFormatNumber() + " ~ " + String(sellerConfigure.maxPay).getFormatNumber() + ")元"
     }
 }

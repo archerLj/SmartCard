@@ -140,7 +140,7 @@ class SCPayPlanTableViewCell: UITableViewCell {
             payRange.textColor = UIColor(red: 155/255.0, green: 155/255.0, blue: 155/255.0, alpha: 1.0)
             
             sellerName.text = sellerConfigure.sellerName
-            payRange.text = "(" + String(sellerConfigure.minPay) + "~" + String(sellerConfigure.maxPay) + ")元"
+            payRange.text = "(" + String(sellerConfigure.minPay).getFormatNumber() + "~" + String(sellerConfigure.maxPay).getFormatNumber() + ")元"
             
             self.contentView.addSubview(sellerName)
             self.contentView.addSubview(payRange)

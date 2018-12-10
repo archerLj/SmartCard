@@ -15,6 +15,21 @@ extension String {
 }
 
 extension String {
+    
+    func getFormatNumber() -> String {
+        
+        if let fself = Float(self) {
+            let format = NumberFormatter()
+            format.numberStyle = .decimal
+            if let rs = format.string(from: NSNumber(value: fself)) {
+                return rs
+            }
+            return self
+        } else {
+            return self
+        }
+    }
+    
     func getSha1() -> String {
         guard let data = self.data(using: .utf8) else {
             fatalError("Couldn't get data from this string")

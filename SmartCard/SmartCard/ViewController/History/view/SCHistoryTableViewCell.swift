@@ -21,7 +21,7 @@ class SCHistoryTableViewCell: UITableViewCell {
     
     func configure(payRecord: PayRecord) {
         seller.text = payRecord.sellerName
-        payNum.text = String(payRecord.payNum)
+        payNum.text = String(payRecord.payNum).getFormatNumber()
 
         let f1 = payRecord.payDate!.dropFirst(11)
         let f2 = f1.dropLast(3)
